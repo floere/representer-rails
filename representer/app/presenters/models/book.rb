@@ -1,13 +1,5 @@
-class Presenters::Models::Book < Presenters::Restorm
+class Presenters::Models::Book < Presenters::Project
   
-  def load_list_item
-    @pages = @model.pages
-  end
-  def load_collection_item
-    @pages = @model.pages
-  end
-  def load_table_row
-    @pages = @model.pages
-  end
+  model_reader :pages
   
 end

@@ -29,7 +29,7 @@ module PresenterHelper
         presenter_class = default_presenter_class_for(model)
       end
       
-      presenter_class.new(model, controller_from(context))
+      presenter_class.new(model, context) #controller_from(context))
     rescue NameError => e
       raise "No presenter for #{model.class}."
     end

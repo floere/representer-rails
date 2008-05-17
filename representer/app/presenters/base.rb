@@ -51,6 +51,8 @@ class Presenters::Base
     #   end
     # end   # def model_reader
     # 
+    # TODO think about this one
+    #
     def model_reader(*args)
       args = args.dup
       opts = args.pop if args.last.kind_of?(Hash)
@@ -104,6 +106,7 @@ class Presenters::Base
 
   # You can use #logger in your presenters. 
   #
+  # TODO remove since delegated?
   def logger
     RAILS_DEFAULT_LOGGER
   end
@@ -116,9 +119,9 @@ class Presenters::Base
 
   # Returns the root of this presenters views
   #
-  def presenter_view_paths
-    File.join(RAILS_ROOT, 'app/views')
-  end
+  # def presenter_view_paths
+  #   File.join(RAILS_ROOT, 'app/views')
+  # end
 
   # Returns the root of this presenters views
   #
@@ -185,12 +188,14 @@ class Presenters::Base
   #   render_template view, opts
   # end
   
-  def render_as(view, options = {})
+  def render_as(view, format)
     # load_variables_for_template_name
     load_method_name = "load_#{view}".to_sym
     self.send(load_method_name) if self.respond_to? load_method_name
     
-    render_template view, options
+    template_format = format
+    
+    render_template view
   end
   
   # module ViewExtension
@@ -226,8 +231,11 @@ class Presenters::Base
   # # symbolized version of the :format parameter of the request, or :html by default.
   # def template_format
   #   return @template_format if @template_format
-  #   format = controller && controller.respond_to?(:request) && controller.request.parameters[:format]
+  #   format = context.respond_to?(:request) && context.request.parameters[:format]
   #   @template_format = format.blank? ? :html : format.to_sym
+  # end
+  # def template_format=(format)
+  #   @template_format = format
   # end
   
   # Renders a template.
@@ -240,7 +248,7 @@ class Presenters::Base
   #   :format         Whatever you use as a format here will be appended to the template name: 
   #                   :html gives you template.html
   #
-  def render_template(template, opts={})
+  def render_template(template)
     # @presenter = self
   
     # copy instance variables from the presenter to a hash
@@ -268,7 +276,6 @@ class Presenters::Base
     )
     
     # view_instance.path_generator = self
-    
     
     # template_name = [template, 'html', 'haml'].compact.join('.')
     template_name = template.to_s

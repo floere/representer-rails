@@ -1,4 +1,4 @@
-class Presenters::Restorm < Presenters::Base
+class Presenters::Project < Presenters::Base
   
   context_method :read_fragment, :write_fragment
   # Handles fragment caching in presenters.
@@ -29,6 +29,7 @@ class Presenters::Restorm < Presenters::Base
     value.blank? ? value : content_tag(:div, value, :class => 'user_html')
   end
   
+  # TODO should go up?
   delegate :to_param,           :to => :model
   
   # All of the rails' standard helpers. We care so you don't have to. 
