@@ -188,14 +188,12 @@ class Presenters::Base
   #   render_template view, opts
   # end
   
-  def render_as(view, format)
+  def render_as(view, format = :html)
     # load_variables_for_template_name
     load_method_name = "load_#{view}".to_sym
     self.send(load_method_name) if self.respond_to? load_method_name
     
-    template_format = format
-    
-    render_template view
+    render_template view, format
   end
   
   # module ViewExtension
@@ -216,13 +214,11 @@ class Presenters::Base
   #   
   #   # 
   #   def full_template_path(template_path, extension)
-  #     p [:debug, :full_template_path_called]
   #     @path_generator.generate_path(template_path, extension)
   #   end
   # end
   # def generate_path(template_path, extension)
   #   generated_path = presenter_template(template_path, extension)
-  #   p [:debug, :generated_path, generated_path]
   #   generated_path
   # end
 
@@ -248,7 +244,7 @@ class Presenters::Base
   #   :format         Whatever you use as a format here will be appended to the template name: 
   #                   :html gives you template.html
   #
-  def render_template(template)
+  def render_template(template, format)
     # @presenter = self
   
     # copy instance variables from the presenter to a hash
@@ -274,6 +270,8 @@ class Presenters::Base
       presenter_instance_variables,
       RenderingContext.new(self, context)
     )
+    
+    view_instance.template_format = format
     
     # view_instance.path_generator = self
     
