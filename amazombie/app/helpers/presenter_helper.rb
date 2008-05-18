@@ -1,19 +1,14 @@
 module PresenterHelper
   
-  SPECIFIC_PRESENTER_MAPPING = {}
-  
-  # REMOVE - TOO SPECIFIC
-  # {
-  #   Video::MusicVideo => Presenters::Clip::Release,
-  #   Video::SpecialFeature => Presenters::Clip::Release,
-  #   Video::Ad => Presenters::Clip::Ad,
-  #   Video::Jingle => Presenters::Clip::Jingle,
-  #   Video::Clip => Presenters::Clip::Clip,
-  #   
-  #   Contact::Link => Presenters::Profile::Link,
-  #   
-  #   NilClass =>  Presenters::Nil
-  # }
+  # Should return a hash in the form of:
+  # { SomeModules::ModelClass => SomeModules::PresenterClass }
+  #
+  # Normally, the default convention is fine, but sometimes you might want to have
+  # a specific presenter mapping: This is the place to override it.
+  #
+  def specific_presenter_mapping
+    # your hash of specific mappings
+  end
   
   # Construct a presenter for a collection.
   #
@@ -21,37 +16,41 @@ module PresenterHelper
     Presenters::Collection.new(pagination_array, context)
   end
   
+  # TODO Comment
+  #
   def presenter_for(model, context = self)
     begin
-      presenter_class = SPECIFIC_PRESENTER_MAPPING[model.class]
+      # Is there a specific mapping?
+      presenter_class = (specific_presenter_mapping || {})[model.class]
       
+      # If not, get the default mapping.
       unless presenter_class
         presenter_class = default_presenter_class_for(model)
       end
       
+      # And create a presenter for the model.
+      # TODO controller_from remove ok?
       presenter_class.new(model, context) #controller_from(context))
     rescue NameError => e
       raise "No presenter for #{model.class}."
     end
   end
   
+  # TODO Comment
+  #
   def default_presenter_class_for(model)
     "Presenters::Models::#{model.class.name}".constantize
   end
 
-  # Return an array of presenters for these events
-  #
-  def presenters_for_events(events_list, context=self)
-    events_list.collect { |event| presenter_for(event, context) }
-  end
-
   # Extracts a controller given an instance variable that might either be a controller itself or a view. 
   #
-  def controller_from(obj)
-    if obj.respond_to?(:controller)
-      obj.controller
-    else
-      obj
-    end
-  end
+  # TODO remove?
+  #
+  # def controller_from(obj)
+  #   if obj.respond_to?(:controller)
+  #     obj.controller
+  #   else
+  #     obj
+  #   end
+  # end
 end
