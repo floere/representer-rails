@@ -1,4 +1,4 @@
-class Presenters::Models::Brain < Presenters::Project
+class Presenters::Brain < Presenters::Project
   
   model_reader :weight, :filter_through => :with_kg
   model_reader :type #, :filter_through => :truncate_10

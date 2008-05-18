@@ -6,8 +6,8 @@ module PresenterHelper
   # Normally, the default convention is fine, but sometimes you might want to have
   # a specific presenter mapping: This is the place to override it.
   #
-  def specific_presenter_mapping
-    # your hash of specific mappings
+  def specific_mapping
+    # your hash of specific model-to-presenter class mappings
   end
   
   # Construct a presenter for a collection.
@@ -21,7 +21,7 @@ module PresenterHelper
   def presenter_for(model, context = self)
     begin
       # Is there a specific mapping?
-      presenter_class = (specific_presenter_mapping || {})[model.class]
+      presenter_class = (specific_mapping || {})[model.class]
       
       # If not, get the default mapping.
       unless presenter_class
@@ -39,7 +39,7 @@ module PresenterHelper
   # TODO Comment
   #
   def default_presenter_class_for(model)
-    "Presenters::Models::#{model.class.name}".constantize
+    "Presenters::#{model.class.name}".constantize
   end
 
   # Extracts a controller given an instance variable that might either be a controller itself or a view. 
