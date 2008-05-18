@@ -1,7 +1,7 @@
 class Presenters::Base
   include ActionController::UrlWriter
 
-  # Every presenter needs a model
+  # Every presenter needs a model and a context.
   attr_accessor :model, :context
 
   # A module that will collect all helpers that need to be made available to the view. 
@@ -11,15 +11,13 @@ class Presenters::Base
   # All the methods that are delegated from the presenter or its view to the context.
   class_inheritable_accessor :context_method_delegations
   self.context_method_delegations = []
-    
-  # Class methods: model_reader, etc..
-  #
+  
   class << self
 
-    # Define a reader for a model attribute. This is like a delegation to the model#attr. 
+    # Define a reader for a model attribute. Acts as a filtered delegation to the model. 
     #
-    # You may specify a :filter_through option that is either a symbol or an array of symbols. Return value
-    # from the model attribute will be filtered through the functions (arity 1) and only then passed back 
+    # You may specify a :filter_through option that is either a symbol or an array of symbols. The return value
+    # from the model will be filtered through the functions (arity 1) and only then passed back 
     # to the receiver. 
     #
     # Example: 
@@ -27,29 +25,6 @@ class Presenters::Base
     #   model_reader :foobar                                        # like delegate :foobar, :to => :model
     #   model_reader :foobar, :filter_through => :h                 # html escape foobar 
     #   model_reader :foobar, :filter_through => [:textilize, :h]   # first textilize, then html escape
-    #
-    # def model_reader(*args)
-    #   args = args.dup         # let's not modify args array
-    #   
-    #   opts = {}
-    #   opts = args.pop if args.last.kind_of?( Hash )
-    #         
-    #   args.each do |field|
-    #     delegate field, :to => :model
-    #     
-    #     # Method chain a filter to the method we just created.
-    #     if opts.has_key? :filter_through
-    #       filter_chain=[*(opts[:filter_through])].reverse
-    #       module_eval(<<-EOS, "(__PRESENTER FILTER__)", 1)
-    #         def #{field}_with_filter(*args, &block)
-    #           #{filter_chain.join('(')}(#{field}_without_filter(*args, &block))#{[')']*(filter_chain.size-1)}
-    #         end
-    #       EOS
-    #       
-    #       alias_method_chain field, :filter
-    #     end
-    #   end
-    # end   # def model_reader
     # 
     # TODO think about this one
     #
@@ -68,14 +43,14 @@ class Presenters::Base
       end
     end
     
-    # Make a helper available for the current presenter and all its subclasses. The views will also have it. 
+    # Make a helper available to the current presenter, its subclasses and the presenter's views. 
     #
     def helper(helper)
       include helper
       master_helper_module.send(:include, helper)
     end
 
-    # Allow calling of certain context methods in both the presenter and the view. 
+    # Delegates method calls to the context.
     #
     # Example: 
     #   context_method :current_user
@@ -83,8 +58,8 @@ class Presenters::Base
     def context_method(*methods)
       self.context_method_delegations += methods
       
-      methods.each do |cmethod|
-        delegate cmethod, :to => :context
+      methods.each do |method|
+        delegate method, :to => :context
       end
     end
     
@@ -104,20 +79,21 @@ class Presenters::Base
     @model, @context = model, context
   end
 
-  # You can use #logger in your presenters. 
+  # Make #logger available in presenters. 
   #
-  # TODO remove since delegated?
-  def logger
-    RAILS_DEFAULT_LOGGER
-  end
+  context_method :logger
+  
+  # Delegate #to_param to the model by default.
+  #
+  model_reader :to_param
 
   # Returns the path from the presenter_view_paths to the actual templates. 
   #
-  def presenter_path
-    self.class.presenter_path
-  end
+  # def presenter_path
+  #   self.class.presenter_path
+  # end
 
-  # Returns the root of this presenters views
+  # Returns the root of this presenter's views.
   #
   # def presenter_view_paths
   #   File.join(RAILS_ROOT, 'app/views')
@@ -125,11 +101,11 @@ class Presenters::Base
 
   # Returns the root of this presenters views
   #
-  def presenter_template(name)
-    if name.index('/')    # presenters/somethingorother/_foo.haml
+  def presenter_template_path(name)
+    if name.include?('/')    # 'presenters/somethingorother/foo.haml'
       name
     else
-      File.join(presenter_path, name)
+      File.join(self.class.presenter_path, name)
     end
   end
 
@@ -140,30 +116,32 @@ class Presenters::Base
   #
   # This is basically a proxy for the controller.
   #
-  class RenderingContext
-    def initialize(presenter, context)
-      @presenter, @context = presenter, context
-    end
-    
-    def class
-      RenderingContextClass.new(@presenter)
-    end
-    
-    def method_missing(*args, &block)
-      @context.send(*args, &block)
-    end
-    # def respond_to?(sym)
-    #   self.respond_to?(sym) || @context.respond_to?(sym)
-    # end
-  end
-  class RenderingContextClass
-    def initialize(presenter)
-      @presenter = presenter
-    end
-    def controller_path
-      @presenter.presenter_path
-    end
-  end
+  # TODO still needed, is context enough?
+  #
+  # class RenderingContext
+  #   def initialize(presenter, context)
+  #     @presenter, @context = presenter, context
+  #   end
+  #   
+  #   def class
+  #     RenderingContextClass.new(@presenter)
+  #   end
+  #   
+  #   def method_missing(*args, &block)
+  #     @context.send(*args, &block)
+  #   end
+  #   # def respond_to?(sym)
+  #   #   self.respond_to?(sym) || @context.respond_to?(sym)
+  #   # end
+  # end
+  # class RenderingContextClass
+  #   def initialize(presenter)
+  #     @presenter = presenter
+  #   end
+  #   def controller_path
+  #     @presenter.presenter_path
+  #   end
+  # end
 
   # Render a presenter view. 
   #
@@ -193,7 +171,7 @@ class Presenters::Base
     load_method_name = "load_#{view}".to_sym
     self.send(load_method_name) if self.respond_to? load_method_name
     
-    render_template view, format
+    render_template view.to_s, format
   end
   
   # module ViewExtension
@@ -221,33 +199,19 @@ class Presenters::Base
   #   generated_path = presenter_template(template_path, extension)
   #   generated_path
   # end
-
-  # TODO should we override this?
-  #
-  # # symbolized version of the :format parameter of the request, or :html by default.
-  # def template_format
-  #   return @template_format if @template_format
-  #   format = context.respond_to?(:request) && context.request.parameters[:format]
-  #   @template_format = format.blank? ? :html : format.to_sym
-  # end
-  # def template_format=(format)
-  #   @template_format = format
-  # end
   
   # Renders a template.
   #
   # In the template, you can access all instance variables of the presenter as
-  # well as the @presenter instance variable.
+  # well as the @presenter, @controller instance variable.
   #
   # Options are: 
   #
-  #   :format         Whatever you use as a format here will be appended to the template name: 
-  #                   :html gives you template.html
+  #   :format         Whatever you use as a format here will define which template is rendered.
   #
   def render_template(template, format)
-    # @presenter = self
-  
-    # copy instance variables from the presenter to a hash
+    
+    # Copy instance variables from the presenter to a hash.
     presenter_instance_variables = instance_variables.inject(
       { :presenter => self, :controller => @context }
     ) do |vars, var|
@@ -255,34 +219,30 @@ class Presenters::Base
       vars[var[1..-1].to_sym] = instance_variable_get(var)
       vars
     end
-        
+    
+    # Create a new anonymous view class.
     view_klass = Class.new(ActionView::Base)
     view_klass.send(:include, master_helper_module)
     
     # view_klass.send(:include, ViewExtension)
     
-    context_method_delegations.each do |controller_method|
-      view_klass.delegate controller_method, :to => :controller
+    # Install context delegations.
+    context_method_delegations.each do |context_method|
+      view_klass.delegate context_method, :to => :context
     end
     
     view_instance = view_klass.new(
       context.view_paths,
       presenter_instance_variables,
-      RenderingContext.new(self, context)
+      context #RenderingContext.new(self, context) # probably needed if rendering in the controller
     )
     
+    # Set the format to render in, e.g. text, html
     view_instance.template_format = format
     
-    # view_instance.path_generator = self
-    
-    # template_name = [template, 'html', 'haml'].compact.join('.')
-    template_name = template.to_s
-    # view_instance.render_file(template_name, true)
-    # replaced with
-    view_instance.render_file(presenter_template(template_name), true)
+    # Render the template.
+    view_instance.render_file(presenter_template_path(template), true)
   end
-  
-  delegate :to_param,           :to => :model
   
   # private
   # 
