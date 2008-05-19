@@ -23,16 +23,10 @@ class Presenters::Project < Presenters::Base
     fragment
   end
   
-  # Wraps value into a div with class user_html
-  #
-  def wrap_in_user_html(value)
-    value.blank? ? value : content_tag(:div, value, :class => 'user_html')
-  end
-  
   # TODO should go up?
   delegate :to_param,           :to => :model
   
-  # All of the rails' standard helpers. We care so you don't have to. 
+  # All of the rails' standard helpers.
   #
   helper ActionView::Helpers::ActiveRecordHelper
   helper ActionView::Helpers::TagHelper
