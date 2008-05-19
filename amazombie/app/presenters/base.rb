@@ -44,7 +44,9 @@ class Presenters::Base
       end
     end
     
-    # Make a helper available to the current presenter, its subclasses and the presenter's views. 
+    # Make a helper available to the current presenter, its subclasses and the presenter's views.
+    #
+    # Same as in Controller::Base.
     #
     def helper(helper)
       include helper

@@ -41,6 +41,8 @@ describe Presenters::Base do
       class Presenters::ContextMethodDelegating < Presenters::Base; end
       class Presenters::AlsoContextMethodDelegating < Presenters::Base; end
       
+      Presenters::Base.context_method_delegations = []
+      
       Presenters::ContextMethodDelegating.context_method_delegations = :one_value
       Presenters::AlsoContextMethodDelegating.context_method_delegations = :other_value
     end
@@ -48,7 +50,40 @@ describe Presenters::Base do
       Presenters::ContextMethodDelegating.context_method_delegations.should == :one_value
     end
     it "should not set specific context_method_delegations on Base" do
-      Presenters::Base.context_method_delegations.should == [:logger]
+      Presenters::Base.context_method_delegations.should == []
+    end
+  end
+  
+  describe ".context_method" do
+    before(:each) do
+      Presenters::Base.context_method_delegations = []
+    end
+    it "should add the method to the method delegations" do
+      flexmock(Presenters::Base).should_receive(:context_method_delegations=).once.with [:method1, :method2]
+      Presenters::Base.context_method :method1, :method2
+    end
+    it "should set up delegate calls to the context" do
+      flexmock(Presenters::Base).should_receive(:delegate).once.with(:method1, :to => :context)
+      flexmock(Presenters::Base).should_receive(:delegate).once.with(:method2, :to => :context)
+      Presenters::Base.context_method :method1, :method2
+    end
+  end
+  
+  describe ".helper" do
+    it "should include the helper" do
+      helper_module = Module.new
+      flexmock(Presenters::Base).should_receive(:include).once.with helper_module
+      
+      Presenters::Base.helper helper_module
+    end
+    it "should include the helper in the master helper module" do
+      master_helper_module_mock = flexmock(:master_helper_module)
+      flexmock(Presenters::Base).should_receive(:master_helper_module).and_return master_helper_module_mock
+      
+      helper_module = Module.new
+      master_helper_module_mock.should_receive(:include).once.with helper_module
+      
+      Presenters::Base.helper helper_module
     end
   end
   
