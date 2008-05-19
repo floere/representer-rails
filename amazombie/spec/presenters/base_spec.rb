@@ -141,7 +141,7 @@ describe Presenters::Base do
       flexmock(@presenter).should_receive(:load_instance_variables_for_rendering).once.with view_name
       
       presenter_instance_variables_mock = flexmock(:presenter_instance_variables_mock)
-      flexmock(@presenter).should_receive(:load_instance_variables).once.and_return presenter_instance_variables_mock
+      flexmock(@presenter).should_receive(:collect_instance_variables_for_view).once.and_return presenter_instance_variables_mock
       
       view_class_mock = flexmock(:view_class)
       flexmock(@presenter).should_receive(:initialize_view_class).once.and_return view_class_mock
@@ -153,11 +153,114 @@ describe Presenters::Base do
       view_instance_mock.should_receive(:template_format=).once.with :html
       
       path_mock = flexmock(:path)
-      flexmock(@presenter).should_receive(:presenter_template_path).once.with(view_name).and_return path_mock
+      flexmock(@presenter).should_receive(:template_path).once.with(view_name).and_return path_mock
       
       view_instance_mock.should_receive(:render_file).once.with(path_mock, true)
       
       @presenter.render_as(view_name)
+    end
+  end
+  
+  describe "with mocked Presenter" do
+    attr_reader :model_mock, :context_mock, :presenter
+    before(:each) do
+      @model_mock = flexmock(:model)
+      @context_mock = flexmock(:context)
+      @presenter = Presenters::Base.new(model_mock, context_mock)
+    end
+    describe "#presenter_template_path" do
+      describe "absolute path given" do
+        it "should use it as given" do
+          presenter.template_path('some/path/to/template').should == 'some/path/to/template'
+        end
+      end
+      describe "with just the template name" do
+        it "should prepend the presenter path" do
+          flexmock(Presenters::Base).should_receive(:presenter_path).and_return('some/presenter/path/to')
+          
+          presenter.template_path('template').should == 'some/presenter/path/to/template'
+        end
+      end
+    end
+    describe "#initialize_view_class" do
+      it "should get a new anonymous view class" do
+        anonymous_view_class = Class.new(ActionView::Base)
+        flexmock(Class).should_receive(:new).once.with(ActionView::Base).and_return anonymous_view_class
+        
+        presenter.initialize_view_class
+      end
+      it "should include the master helper module in the view class" do
+        anonymous_view_class = flexmock(:anonymous_view_class)
+        anonymous_view_class.should_receive(:delegate)
+        flexmock(Class).should_receive(:new).once.with(ActionView::Base).and_return anonymous_view_class
+        
+        anonymous_view_class.should_receive(:include).once.with(presenter.master_helper_module)
+        presenter.initialize_view_class
+      end
+      
+      # TODO Or should it???
+      #
+      it "should install all the context delegates in the view" do
+        anonymous_view_class = flexmock(:anonymous_view_class)
+        anonymous_view_class.should_receive(:include)
+        flexmock(Class).should_receive(:new).once.with(ActionView::Base).and_return anonymous_view_class
+        
+        flexmock(presenter).should_receive(:delegate_methods_to_context_in).once.with(anonymous_view_class)
+        presenter.initialize_view_class
+      end
+      
+      it "should return the created view class" do
+        anonymous_view_class = flexmock(:anonymous_view_class)
+        anonymous_view_class.should_receive(:include)
+        flexmock(Class).should_receive(:new).once.with(ActionView::Base).and_return anonymous_view_class
+        
+        flexmock(presenter).should_receive(:delegate_methods_to_context_in)
+        
+        presenter.initialize_view_class.should == anonymous_view_class
+      end
+    end
+    describe "#collect_instance_variables_for_view" do
+      it "should hand the right variables to the view" do
+        presenter.collect_instance_variables_for_view.should == {
+          :model => model_mock,
+          :context => context_mock,
+          :controller => context_mock,
+          :presenter => presenter
+        }
+      end
+    end
+  end
+  
+  describe "#load_instance_variables_for_rendering" do
+    # it "should not call the load method on self if there is none" do
+    #   presenter = Presenters::Base.new(nil, nil)
+    #   
+    #   flexmock(presenter).should_receive(:respond_to?).with(:load_some_view_name).and_return false
+    #   flexmock(presenter).should_receive(:load_some_view_name).never
+    #   
+    #   presenter.load_instance_variables_for_rendering 'some_view_name'
+    # end
+    it "should call the load method on self if there is one" do
+      presenter = Presenters::Base.new(nil, nil)
+      flexmock(presenter).should_receive(:load_some_view_name).once
+      
+      presenter.load_instance_variables_for_rendering 'some_view_name'
+    end
+  end
+  
+  describe "#view_instance_from" do
+    it "should call new on the given view class" do
+      context_mock = flexmock(:context)
+      presenter = Presenters::Base.new(nil, context_mock)
+      
+      view_class_mock = flexmock(:view_class)
+      presenter_instance_variables_mock = flexmock(:presenter_instance_variables_mock)
+      
+      view_paths_mock = flexmock(:view_paths)
+      context_mock.should_receive(:view_paths).and_return view_paths_mock
+      
+      view_class_mock.should_receive(:new).once.with(view_paths_mock, presenter_instance_variables_mock, context_mock)
+      presenter.view_instance_from(view_class_mock, presenter_instance_variables_mock)
     end
   end
   

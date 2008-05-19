@@ -158,7 +158,7 @@ class Presenters::Base
     
     # Copy instance variables from the presenter to a hash to
     # expose these to the view.
-    presenter_instance_variables = load_instance_variables
+    presenter_instance_variables = collect_instance_variables_for_view
     
     # Initialize a new anonymous view class.
     view_class = initialize_view_class
@@ -170,7 +170,7 @@ class Presenters::Base
     view_instance.template_format = format
     
     # Finally, render
-    view_instance.render_file(presenter_template_path(view), true)
+    view_instance.render_file(template_path(view), true)
   end
   
   # Delegate to the class for a default format.
@@ -187,13 +187,14 @@ class Presenters::Base
     self.send(load_method_name) if self.respond_to? load_method_name
   end
   
-  # TODO Decouple from method above.
+  # TODO Decouple from method above. (Using the bucket technique)
   #
-  def load_instance_variables
+  def collect_instance_variables_for_view
+    
     instance_variables.inject(
       { :presenter => self, :controller => @context } # TODO @context.controller?
     ) do |vars, var|
-      next vars if %w{@controller}.include?(var)
+      next vars if %w{@controller}.include?(var) # TODO clean
       vars[var[1..-1].to_sym] = instance_variable_get(var)
       vars
     end
@@ -201,19 +202,30 @@ class Presenters::Base
   
   def initialize_view_class
     # Get anonymous view class.
-    view_klass = Class.new(ActionView::Base)
+    view_class = Class.new(ActionView::Base)
     
     # Include the master helper module.
-    view_klass.send(:include, master_helper_module)
+    view_class.send(:include, master_helper_module)
     
     # Install context delegations.
+    #
+    # TODO really necessary?
+    #
+    delegate_methods_to_context_in view_class
+    
+    view_class
+  end
+  
+  # Sets up method delegation to the context in view.
+  #
+  def delegate_methods_to_context_in view_class
     context_method_delegations.each do |context_method|
-      view_klass.delegate context_method, :to => :context
+      view_class.delegate context_method, :to => :context
     end
   end
   
   def view_instance_from(view_class, presenter_instance_variables)
-    view_instance = view_class.new(
+    view_class.new(
       context.view_paths,
       presenter_instance_variables,
       context #RenderingContext.new(self, context) # probably needed if rendering in the controller
@@ -249,7 +261,7 @@ class Presenters::Base
   # Returns the root of this presenters views with the template name appended.
   # e.g. 'presenters/some/specific/path/to/template'
   #
-  def presenter_template_path(name)
+  def template_path(name)
     name = name.to_s
     if name.include?('/')    # Specific path like 'presenters/somethingorother/foo.haml' given.
       name
