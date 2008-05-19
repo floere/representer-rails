@@ -100,6 +100,36 @@ describe Presenters::Base do
     end
   end
   
+  describe "pagination" do
+    it "should call render_partial and return the rendered result" do
+      flexmock(collection_presenter).should_receive(:render_partial).and_return(:result)
+      
+      collection_presenter.pagination.should == :result
+    end
+    it "should call render_partial with the right parameters" do
+      default_options = {
+        :collection => collection_mock,
+        :context => context_mock,
+        :template_name => :pagination,
+        :separator => nil
+      }
+      flexmock(collection_presenter).should_receive(:render_partial).once.with(:pagination, default_options)
+      
+      collection_presenter.pagination
+    end
+    it "should override the default options if specific options are given" do
+      specific_options = {
+        :collection => :a,
+        :context => :b,
+        :template_name => :c,
+        :separator => :d
+      }
+      flexmock(collection_presenter).should_receive(:render_partial).once.with(:c, specific_options)
+      
+      collection_presenter.pagination(specific_options)
+    end
+  end
+  
   describe "render_partial" do
     it "should call instance eval on the context" do
       context_mock.should_receive(:instance_eval).once

@@ -88,34 +88,35 @@ class Presenters::Collection
   #   - Uses a nil separator.
   #
   def table(options = {})
-    default_options = {
+    options = {
       :collection => @collection,
       :context => @context,
       :template_name => :table_row,
       :separator => nil
-    }
+    }.merge(options)
     
-    render_partial 'table', default_options.merge(options)
+    render_partial 'table', options
   end
   
+  # Renders a pagination.
+  #
+  # Options:
+  #   collection => collection to iterate over
+  #   context => context to render in
+  #   template_name => template to render for the pagination
+  # By default, uses:
+  #   - The collection of the collection presenter to iterate over.
+  #   - The original context given to the collection presenter to render in.
+  #   - Uses 'pagination' as the default element template.
+  #
   def pagination(options = {})
     options = {
       :collection => @collection,
       :context => @context,
-      :template_name => :pagination
+      :template_name => :pagination,
+      :separator => nil
     }.merge(options)
     
-    # Renders a pagination.
-    #
-    # Options:
-    #   collection => collection to iterate over
-    #   context => context to render in
-    #   template_name => template to render for the pagination
-    # By default, uses:
-    #   - The collection of the collection presenter to iterate over.
-    #   - The original context given to the collection presenter to render in.
-    #   - Uses 'pagination' as the default element template.
-    #
     render_partial options[:template_name], options
   end
   
