@@ -40,7 +40,7 @@ describe PresenterHelper do
       it "should return a default presenter instance" do
         class SomeModelClass; end
         class Presenters::SomeModelClass < Presenters::Base; end
-        presenter_for(SomeModelClass.new).class.should == Presenters::SomeModelClass
+        presenter_for(SomeModelClass.new).should be_instance_of(Presenters::SomeModelClass)
       end
     end
     describe "with specific mapping" do
@@ -52,7 +52,7 @@ describe PresenterHelper do
         )
       end
       it "should return a specifically mapped presenter instance" do
-        presenter_for(SomeModelClass.new).class.should == Presenters::SomeSpecificClass
+        presenter_for(SomeModelClass.new).should be_instance_of(Presenters::SomeSpecificClass)
       end
       it "should not call #default_presenter_class_for" do
         flexmock(self).should_receive(:default_presenter_class_for).never

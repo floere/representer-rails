@@ -1,8 +1,9 @@
 class Presenters::Base
+  # TODO remove?
   include ActionController::UrlWriter
 
   # Every presenter needs a model and a context.
-  attr_accessor :model, :context
+  attr_reader :model, :context
 
   # A module that will collect all helpers that need to be made available to the view. 
   class_inheritable_accessor :master_helper_module
@@ -84,6 +85,8 @@ class Presenters::Base
   context_method :logger
   
   # Delegate #to_param to the model by default.
+  #
+  # TODO or not? Too Active Record specific? Should I do a Presenters::AR Subclass?
   #
   model_reader :to_param
 
