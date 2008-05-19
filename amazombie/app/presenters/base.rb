@@ -13,6 +13,10 @@ class Presenters::Base
   class_inheritable_accessor :context_method_delegations
   self.context_method_delegations = []
   
+  # Default format for the view rendering is html.
+  class_inheritable_accessor :default_format
+  self.default_format = :html
+  
   class << self
 
     # Define a reader for a model attribute. Acts as a filtered delegation to the model. 
@@ -147,9 +151,9 @@ class Presenters::Base
   # Calling presenter.render_as('template', :html) will render the first
   # template, calling presenter.render_as('template', :text) will render
   # the second.
-  # 
-  def render_as(view, format = :html)
-    # load_variables_for_template_name
+  #
+  def render_as(view, format = default_format)
+    # Load instance variables from the presenter load method.
     load_instance_variables_for_rendering view
     
     # Copy instance variables from the presenter to a hash to
@@ -169,6 +173,12 @@ class Presenters::Base
     view_instance.render_file(presenter_template_path(view), true)
   end
   
+  # Delegate to the class for a default format.
+  #
+  def default_format
+    self.class.default_format
+  end
+  
   # TODO Possibly not so clever loading them straight into the
   # presenter if it is rendered multiple times.
   #
@@ -177,6 +187,8 @@ class Presenters::Base
     self.send(load_method_name) if self.respond_to? load_method_name
   end
   
+  # TODO Decouple from method above.
+  #
   def load_instance_variables
     instance_variables.inject(
       { :presenter => self, :controller => @context } # TODO @context.controller?

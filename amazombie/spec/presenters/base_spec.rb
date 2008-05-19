@@ -117,9 +117,47 @@ describe Presenters::Base do
     end
   end
   
+  describe ".default_format" do
+    it "should return :html" do
+      Presenters::Base.default_format.should == :html
+    end
+  end
+  describe "#default_format" do
+    it "should delegate to the class" do
+      flexmock(Presenters::Base).should_receive(:default_format).once
+      Presenters::Base.new(nil, nil).default_format
+    end
+  end
+  
   describe "#render_as" do
-    it "should pass through the parameters" do
+    before(:each) do
+      @model_mock = flexmock(:model)
+      @context_mock = flexmock(:context)
+      @presenter = Presenters::Base.new(@model_mock, @context_mock)
+    end
+    it "should call all the necessary methods" do
+      view_name = flexmock(:view_name)
       
+      flexmock(@presenter).should_receive(:load_instance_variables_for_rendering).once.with view_name
+      
+      presenter_instance_variables_mock = flexmock(:presenter_instance_variables_mock)
+      flexmock(@presenter).should_receive(:load_instance_variables).once.and_return presenter_instance_variables_mock
+      
+      view_class_mock = flexmock(:view_class)
+      flexmock(@presenter).should_receive(:initialize_view_class).once.and_return view_class_mock
+      
+      view_instance_mock = flexmock(:view_instance)
+      flexmock(@presenter).should_receive(:view_instance_from).once.with(view_class_mock, presenter_instance_variables_mock).and_return view_instance_mock
+      
+      flexmock(@presenter).should_receive(:default_format).once.and_return :html
+      view_instance_mock.should_receive(:template_format=).once.with :html
+      
+      path_mock = flexmock(:path)
+      flexmock(@presenter).should_receive(:presenter_template_path).once.with(view_name).and_return path_mock
+      
+      view_instance_mock.should_receive(:render_file).once.with(path_mock, true)
+      
+      @presenter.render_as(view_name)
     end
   end
   
