@@ -110,10 +110,9 @@ describe Presenters::Base do
       default_options = {
         :collection => collection_mock,
         :context => context_mock,
-        :template_name => :pagination,
-        :separator => nil
+        :separator => '|'
       }
-      flexmock(collection_presenter).should_receive(:render_partial).once.with(:pagination, default_options)
+      flexmock(collection_presenter).should_receive(:render_partial).once.with('pagination', default_options)
       
       collection_presenter.pagination
     end
@@ -121,10 +120,9 @@ describe Presenters::Base do
       specific_options = {
         :collection => :a,
         :context => :b,
-        :template_name => :c,
-        :separator => :d
+        :separator => :c
       }
-      flexmock(collection_presenter).should_receive(:render_partial).once.with(:c, specific_options)
+      flexmock(collection_presenter).should_receive(:render_partial).once.with('pagination', specific_options)
       
       collection_presenter.pagination(specific_options)
     end

@@ -103,21 +103,20 @@ class Presenters::Collection
   # Options:
   #   collection => collection to iterate over
   #   context => context to render in
-  #   template_name => template to render for the pagination
+  #   separator => separator between pages
   # By default, uses:
   #   - The collection of the collection presenter to iterate over.
   #   - The original context given to the collection presenter to render in.
-  #   - Uses 'pagination' as the default element template.
+  #   - Uses | as separator.
   #
   def pagination(options = {})
     options = {
       :collection => @collection,
       :context => @context,
-      :template_name => :pagination,
-      :separator => nil
+      :separator => '|'
     }.merge(options)
     
-    render_partial options[:template_name], options
+    render_partial 'pagination', options
   end
   
   private

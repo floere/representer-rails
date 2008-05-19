@@ -8,6 +8,6 @@
         = page.to_s
       - else
         = link_to page, :page => page
-      = separator
+      = separator unless collection.last_page?
     - if collection.next_page?
       = link_to 'vorblättern', :page => collection.page+1
