@@ -1,11 +1,6 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe PresenterHelper do
-  include PresenterHelper
-  
-  def current_member
-    flexmock(:current_member)
-  end
   
   describe "collection_presenter_for" do
     it "should return kind of a Presenters::Collection" do
