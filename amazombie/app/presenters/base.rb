@@ -95,52 +95,6 @@ class Presenters::Base
   # TODO or not? Too Active Record specific? Should I do a Presenters::AR Subclass?
   #
   model_reader :to_param
-
-  # Returns the path from the presenter_view_paths to the actual templates. 
-  #
-  # def presenter_path
-  #   self.class.presenter_path
-  # end
-
-  # Returns the root of this presenter's views.
-  #
-  # def presenter_view_paths
-  #   File.join(RAILS_ROOT, 'app/views')
-  # end
-
-  # This class is needed so that we can fake out certain details of the context (often a controller).
-  # For example, we need to prevent prepending the path of each rendered partial with the controller
-  # name - we want partials to be searched for in template root itself. So we redefine controller_path
-  # here, while keeping everything else.
-  #
-  # This is basically a proxy for the controller.
-  #
-  # TODO still needed, is context enough?
-  #
-  # class RenderingContext
-  #   def initialize(presenter, context)
-  #     @presenter, @context = presenter, context
-  #   end
-  #   
-  #   def class
-  #     RenderingContextClass.new(@presenter)
-  #   end
-  #   
-  #   def method_missing(*args, &block)
-  #     @context.send(*args, &block)
-  #   end
-  #   # def respond_to?(sym)
-  #   #   self.respond_to?(sym) || @context.respond_to?(sym)
-  #   # end
-  # end
-  # class RenderingContextClass
-  #   def initialize(presenter)
-  #     @presenter = presenter
-  #   end
-  #   def controller_path
-  #     @presenter.presenter_path
-  #   end
-  # end
   
   # Renders the given view in the presenter's view root in the format given.
   #
@@ -232,32 +186,6 @@ class Presenters::Base
     )
   end
   
-  # module ViewExtension
-  #   # We don't allow paths with extension - and we don't want to cut off the
-  #   # :format extension we append, so we just avoid touching the path. This 
-  #   # overrides the version in ActionView::Base
-  #   #
-  #   # def path_and_extension(path)
-  #   #   [path, nil]
-  #   # end
-  #   
-  #   # A path generator is an interface that the presenter implements itself. It
-  #   # allows the presenter to help out with path generation in ActionView::Base
-  #   #
-  #   def path_generator=(value)
-  #     @path_generator = value
-  #   end
-  #   
-  #   # 
-  #   def full_template_path(template_path, extension)
-  #     @path_generator.generate_path(template_path, extension)
-  #   end
-  # end
-  # def generate_path(template_path, extension)
-  #   generated_path = presenter_template(template_path, extension)
-  #   generated_path
-  # end
-  
   # Returns the root of this presenters views with the template name appended.
   # e.g. 'presenters/some/specific/path/to/template'
   #
@@ -269,64 +197,5 @@ class Presenters::Base
       File.join(self.class.presenter_path, name)
     end
   end
-  
-  # Renders a template.
-  #
-  # In the template, you can access all instance variables of the presenter as
-  # well as the @presenter, @controller instance variable.
-  #
-  # Options are: 
-  #
-  #   :format         Whatever you use as a format here will define which template is rendered.
-  #
-  # def render_template(template, format)
-    
-    # Copy instance variables from the presenter to a hash to
-    # expose these to the view
-    # presenter_instance_variables = instance_variables.inject(
-    #   { :presenter => self, :controller => @context } # TODO @context.controller?
-    # ) do |vars, var|
-    #   next vars if %w{@controller}.include?(var)
-    #   vars[var[1..-1].to_sym] = instance_variable_get(var)
-    #   vars
-    # end
-    
-    # Create a new anonymous view class.
-    # view_klass = Class.new(ActionView::Base)
-    # view_klass.send(:include, master_helper_module)
-    
-    # view_klass.send(:include, ViewExtension)
-    
-    # # Install context delegations.
-    # context_method_delegations.each do |context_method|
-    #   view_klass.delegate context_method, :to => :context
-    # end
-    
-    # view_instance = view_klass.new(
-    #   context.view_paths,
-    #   presenter_instance_variables,
-    #   context #RenderingContext.new(self, context) # probably needed if rendering in the controller
-    # )
-    
-    # Set the format to render in, e.g. text, html
-    # view_instance.template_format = format
-    
-    # Render the template.
-    # view_instance.render_file(presenter_template_path(template), true)
-  # end
-  
-  # private
-  # 
-  #   # Remove the last element from args, if it's a Hash and return args and the Hash.
-  #   #
-  #   def extract_options(args)
-  #     opts = {}
-  #   
-  #     if args.last.is_a?(Hash)
-  #       opts = args.pop
-  #     end
-  #   
-  #     return [args, opts]
-  #   end
   
 end
