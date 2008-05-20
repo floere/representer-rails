@@ -16,15 +16,16 @@ describe PresenterHelper do
   
   describe "presenter_for" do
     it "should just pass the params through to the presenter" do
-      model_mock = flexmock(:model)
+      class SomeModelClass; end
+      class Presenters::SomeModelClass < Presenters::Base; end
       context_mock = flexmock(:context)
+      presenter_class_mock = flexmock(Presenters::SomeModelClass)
       
-      presenter_class_mock = flexmock(:presenter_class_mock)
       flexmock(self).should_receive(:default_presenter_class_for).and_return presenter_class_mock
+      model = SomeModelClass.new
       
-      presenter_class_mock.should_receive(:new).once.with(model_mock, context_mock)
-      
-      presenter_for(model_mock, context_mock)
+      presenter_class_mock.should_receive(:new).once.with(model, context_mock)
+      presenter_for(model, context_mock)
     end
     describe "no specific mapping" do
       before(:each) do
