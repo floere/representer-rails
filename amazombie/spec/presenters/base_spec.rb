@@ -34,10 +34,10 @@ describe Presenters::Base do
       end
     end
     it "should call filters in a given pattern" do
-      @model.some_model_value = ''
+      @model.some_model_value = 's'
       @presenter.class.model_reader :some_model_value, :filter_through => [:a, :b, :a, :a]
     
-      @presenter.some_model_value.should == 'abaa'
+      @presenter.some_model_value.should == 'sabaa'
     end
     it "should pass through the model value if no filters are installed" do
       @model.some_model_value = :some_model_value
