@@ -23,8 +23,8 @@ class Presenters::Project < Presenters::Base
     fragment
   end
   
-  # TODO should go up?
-  delegate :to_param,           :to => :model
+  # TODO should go up? Nope. Add a Presenters::ActiveRecord::Base?
+  model_reader :to_param
   
   # All of the rails' standard helpers.
   #

@@ -14,8 +14,6 @@ describe PresenterHelper do
     end
   end
   
-  # TODO should I check if it is a presenter?
-  # i.e. new_presenter.is_a? Presenters::Base
   describe "presenter_for" do
     it "should just pass the params through to the presenter" do
       model_mock = flexmock(:model)
@@ -32,10 +30,17 @@ describe PresenterHelper do
       before(:each) do
         flexmock(self).should_receive(:specific_mapping).and_return {}
       end
+      it "should raise on a non-presenter instance" do
+        class SomeNonPresenterClass; end
+        class Presenters::SomeNonPresenterClass; end
+        lambda {
+          presenter_for(SomeNonPresenterClass.new)
+        }.should raise_error(PresenterHelper::NotAPresenterError, 'Presenters::SomeNonPresenterClass is not a presenter.')
+      end
       it "should raise on an non-mapped model" do
         lambda {
           presenter_for(42)
-        }.should raise_error(RuntimeError, "No presenter for Fixnum.")
+        }.should raise_error(PresenterHelper::MissingPresenterError, 'No presenter for Fixnum.')
       end
       it "should return a default presenter instance" do
         class SomeModelClass; end

@@ -1,7 +1,5 @@
 class Presenters::Base
-  # TODO remove?
-  include ActionController::UrlWriter
-
+  
   # Every presenter needs a model and a context.
   attr_reader :model, :context
 
@@ -90,12 +88,6 @@ class Presenters::Base
   #
   context_method :logger
   
-  # Delegate #to_param to the model by default.
-  #
-  # TODO or not? Too Active Record specific? Should I do a Presenters::AR Subclass?
-  #
-  model_reader :to_param
-  
   # Renders the given view in the presenter's view root in the format given.
   #
   # Example:
@@ -144,14 +136,14 @@ class Presenters::Base
   # TODO Decouple from method above. (Using the bucket technique)
   #
   def collect_instance_variables_for_view
+    controller = @context.respond_to?(:controller) ? @context.controller : @context
     
     instance_variables.inject(
-      { :presenter => self, :controller => @context } # TODO @context.controller?
+      { :presenter => self, :context => @context }
     ) do |vars, var|
-      next vars if %w{@controller}.include?(var) # TODO clean
       vars[var[1..-1].to_sym] = instance_variable_get(var)
       vars
-    end
+    end.merge( :controller => controller ) # TODO use the bucket technique
   end
   
   def initialize_view_class
@@ -163,7 +155,7 @@ class Presenters::Base
     
     # Install context delegations.
     #
-    # TODO really necessary?
+    # TODO really necessary? View Class IS the context – delegate only if controller is the context…
     #
     delegate_methods_to_context_in view_class
     

@@ -1,5 +1,8 @@
 module PresenterHelper
   
+  class MissingPresenterError < RuntimeError; end
+  class NotAPresenterError < RuntimeError; end
+  
   # Should return a hash in the form of:
   # { SomeModules::ModelClass => SomeModules::PresenterClass }
   #
@@ -16,7 +19,14 @@ module PresenterHelper
     Presenters::Collection.new(pagination_array, context)
   end
   
-  # TODO Comment
+  # Create a new presenter instance for the given model instance
+  # with the given arguments.
+  #
+  # Note: Presenters are usually from class Presenters::<ModelClassName>.
+  # (As returned by default_presenter_class_for)
+  # Override specific_mapping if you'd like to install your own.
+  # OR: Override default_presenter_class_for(model) if
+  # you'd like to change the default.
   #
   def presenter_for(model, context = self)
     begin
@@ -28,29 +38,23 @@ module PresenterHelper
         presenter_class = default_presenter_class_for(model)
       end
       
+      unless presenter_class < Presenters::Base
+        raise NotAPresenterError.new("#{presenter_class} is not a presenter.") 
+      end
+      
       # And create a presenter for the model.
-      # TODO controller_from remove ok?
-      presenter_class.new(model, context) #controller_from(context))
+      presenter_class.new(model, context)
     rescue NameError => e
-      raise "No presenter for #{model.class}."
+      raise MissingPresenterError.new("No presenter for #{model.class}.")
     end
   end
   
-  # TODO Comment
+  # Returns the default presenter class for the given model.
+  #
+  # Default class name is:
+  # Presenters::<ModelClassName>
   #
   def default_presenter_class_for(model)
     "Presenters::#{model.class.name}".constantize
   end
-
-  # Extracts a controller given an instance variable that might either be a controller itself or a view. 
-  #
-  # TODO remove?
-  #
-  # def controller_from(obj)
-  #   if obj.respond_to?(:controller)
-  #     obj.controller
-  #   else
-  #     obj
-  #   end
-  # end
 end

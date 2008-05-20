@@ -198,7 +198,7 @@ describe Presenters::Base do
         presenter.initialize_view_class
       end
       
-      # TODO Or should it???
+      # TODO Or should it??? Possibly not. Maybe render with @context.instance_eval?
       #
       it "should install all the context delegates in the view" do
         anonymous_view_class = flexmock(:anonymous_view_class)
