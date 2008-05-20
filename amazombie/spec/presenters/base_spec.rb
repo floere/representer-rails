@@ -23,6 +23,30 @@ describe Presenters::Base do
     end
   end
   
+  class ModelReaderModel < Struct.new(:some_model_value); end
+  describe ".model_reader" do
+    before(:each) do
+      @model = ModelReaderModel.new
+      @presenter = Presenters::Base.new(@model, nil)
+      class << @presenter
+        def a(s); s << 'a' end
+        def b(s); s << 'b' end
+      end
+    end
+    it "should call filters in a given pattern" do
+      @model.some_model_value = ''
+      @presenter.class.model_reader :some_model_value, :filter_through => [:a, :b, :a, :a]
+    
+      @presenter.some_model_value.should == 'abaa'
+    end
+    it "should pass through the model value if no filters are installed" do
+      @model.some_model_value = :some_model_value
+      @presenter.class.model_reader :some_model_value
+      
+      @presenter.some_model_value.should == :some_model_value
+    end
+  end
+  
   describe ".master_helper_module" do
     before(:each) do
       class Presenters::SpecificMasterHelperModule < Presenters::Base; end
@@ -104,16 +128,6 @@ describe Presenters::Base do
       
       context_mock.should_receive(:logger).once
       presenter.logger
-    end
-  end
-  
-  describe "#to_param" do
-    it "should delegate to the model" do
-      model_mock = flexmock(:model)
-      presenter = Presenters::Base.new(model_mock, nil)
-      
-      model_mock.should_receive(:to_param).once
-      presenter.to_param
     end
   end
   
