@@ -246,14 +246,15 @@ describe Presenters::Base do
   end
   
   describe "#load_instance_variables_for_rendering" do
-    # it "should not call the load method on self if there is none" do
-    #   presenter = Presenters::Base.new(nil, nil)
-    #   
-    #   flexmock(presenter).should_receive(:respond_to?).with(:load_some_view_name).and_return false
-    #   flexmock(presenter).should_receive(:load_some_view_name).never
-    #   
-    #   presenter.load_instance_variables_for_rendering 'some_view_name'
-    # end
+    it "should not call the load method on self if there is none" do
+      presenter = Presenters::Base.new(nil, nil)
+      
+      presenter_mock = flexmock(presenter)
+      presenter_mock.should_receive(:respond_to?).with(/load_some_view_name$/).and_return false # with(:load_some_view_name) does not work
+      presenter_mock.should_receive(:load_some_view_name).never
+      
+      presenter.load_instance_variables_for_rendering 'some_view_name'
+    end
     it "should call the load method on self if there is one" do
       presenter = Presenters::Base.new(nil, nil)
       flexmock(presenter).should_receive(:load_some_view_name).once
