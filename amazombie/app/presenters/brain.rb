@@ -4,6 +4,7 @@ class Presenters::Brain < Presenters::Project
   model_reader :type #, :filter_through => :truncate_10
   
   def with_kg(weight_without_kg)
+    logger.info('called with_kg')
     "#{weight_without_kg} kg"
   end
   

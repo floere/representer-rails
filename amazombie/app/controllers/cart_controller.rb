@@ -1,5 +1,7 @@
 class CartController < ApplicationController
   
+  include PresenterHelper
+  
   def index
     
     @items = [
@@ -12,6 +14,8 @@ class CartController < ApplicationController
       Book.new(45),
       Brain.new(3.2)
     ]
+    
+    @controller_presenter = presenter_for Book.new(1000)
     
   end
   
