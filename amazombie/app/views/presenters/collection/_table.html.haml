@@ -1,6 +1,6 @@
 Table:
 - unless collection.blank?
-  %table
+  %table.collection
     - collection.each do |item|
       %tr
         - presenter = presenter_for(item, self)
