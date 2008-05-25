@@ -7,7 +7,7 @@ class Book < Product
   
   def title_generator
     phrases = [
-      '%s in a Nutshell',
+      '%ss in a Nutshell',
       'Short Guide to %ss',
       'Rapid %s Development on %ss',
       '%s Way to %ss',
@@ -15,9 +15,9 @@ class Book < Product
       '%s Recipes',
       'The Pragmatic %s',
       'Beginning %s: From Novice to Professional',
-      'Agile %s Development with %s',
-      'Enterprise Integration with %s',
-      '%s by Example: %s and %s',
+      'Agile %s Development with %ss',
+      'Enterprise Integration with %ss',
+      '%s by Example: %ss and %ss',
       'The %s Bible',
       'Gardening with %s (aka The Pickaxe)'
     ]

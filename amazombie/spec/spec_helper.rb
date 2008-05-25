@@ -11,9 +11,9 @@ require 'spec/rails'
 # Configuration
 #
 Spec::Runner.configure do |config|
-  config.use_transactional_fixtures = true
-  config.use_instantiated_fixtures  = false
-  config.fixture_path = RAILS_ROOT + '/spec/fixtures/'
+  # config.use_transactional_fixtures = true
+  # config.use_instantiated_fixtures  = false
+  # config.fixture_path = RAILS_ROOT + '/spec/fixtures/'
 
   config.mock_with :flexmock
 end
