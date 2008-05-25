@@ -105,9 +105,7 @@ module Presenters
       view_instance.template_format = format if format
     
       # Finally, render
-      # TODO really render file???
-      # view_instance.render_file(template_path(view), true)
-      view_instance.send :render_partial, template_path(view), nil, :presenter => self
+      view_instance.render :partial => template_path(view), :locals => { :presenter => self }
     end
   
     # Returns the instance variables for the view.

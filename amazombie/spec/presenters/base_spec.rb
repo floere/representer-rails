@@ -157,7 +157,7 @@ describe Presenters::Base do
       path_mock = flexmock(:path)
       flexmock(@presenter).should_receive(:template_path).once.with(@view_name).and_return path_mock
       
-      @view_instance_mock.should_receive(:render_partial).once.with(path_mock, nil, :presenter => @presenter)
+      @view_instance_mock.should_receive(:render).once.with(:partial => path_mock, :presenter => @presenter)
     end
     it "should not call template_format=" do
       @view_instance_mock.should_receive(:template_format=).never
