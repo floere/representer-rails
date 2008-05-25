@@ -1,7 +1,6 @@
 class Presenters::Project < Presenters::Base
   
-  controller_method :read_fragment, :write_fragment
-  
+  controller_method :read_fragment, :write_fragment, :current_user
   # Handles fragment caching in presenters.
   # Use as follows:
   # cache "some_key" do

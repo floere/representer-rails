@@ -4,19 +4,19 @@ class CartController < ApplicationController
   
   def index
     
-    @items = [
-      Book.new(36),
-      Book.new(45),
-      Brain.new(5),
-      Book.new(45),
-      Brain.new(12),
-      Brain.new(7.6),
-      Book.new(45),
-      Brain.new(3.2)
-    ]
+    @items = []
+    10.times do
+      @items << Book.new
+      @items << Brain.new
+    end
     
-    @controller_presenter = presenter_for Book.new(1000)
+    # Presenters can be assigned in controllers, too:
+    @controller_presenter = presenter_for Book.new
     
+  end
+  
+  def current_user
+    # get the current user from the session
   end
   
 end

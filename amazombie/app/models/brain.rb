@@ -1,13 +1,8 @@
-class Brain
+class Brain < Product
+  attr_accessor :weight, :former_host
   
-  attr_reader :weight, :type
-  
-  def initialize(weight)
-    @weight = weight
-  end
-  
-  def type
-    ['beautiful, beautiful, beaaaauuuuuuutiful', 'incredibly tasty, yet supple', 'gleaming'][rand(3)]
+  def initialize
+    @weight = 800 + rand(700)
   end
   
 end

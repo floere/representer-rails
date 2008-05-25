@@ -1,9 +1,7 @@
 class Presenters::Book < Presenters::Project
-  
-  model_reader :pages
-  
-  def url
-    # url_for pages, '#'
+  model_reader :description
+
+  def header
+    model.title
   end
-  
 end
