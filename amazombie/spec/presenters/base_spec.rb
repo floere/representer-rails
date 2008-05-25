@@ -150,9 +150,7 @@ describe Presenters::Base do
       view_class_mock = flexmock(:view_class)
       @view_instance_mock = flexmock(:view_instance)
       
-      flexmock(@presenter).should_receive(:instance_variables_for_view).once.and_return('some instance variables')
-      
-      flexmock(@presenter).should_receive(:view_instance_from).once.with(view_class_mock, 'some instance variables').and_return @view_instance_mock
+      flexmock(@presenter).should_receive(:view_instance_from).once.with(view_class_mock).and_return @view_instance_mock
       
       flexmock(@presenter).should_receive(:view_class).once.and_return(view_class_mock)
       
@@ -194,7 +192,7 @@ describe Presenters::Base do
         end
       end
     end
-    describe "#collect_instance_variables_for_view" do
+    describe "#instance_variables_for_view" do
       it "should hand the right variables to the view" do
         presenter.instance_variables_for_view.should == {
           :model => model_mock,
@@ -237,7 +235,7 @@ describe Presenters::Base do
       context_mock.should_receive(:view_paths).and_return view_paths_mock
       
       view_class_mock.should_receive(:new).once.with(view_paths_mock, presenter_instance_variables_mock, context_mock)
-      presenter.view_instance_from(view_class_mock, presenter_instance_variables_mock)
+      presenter.view_instance_from(view_class_mock)
     end
   end
   

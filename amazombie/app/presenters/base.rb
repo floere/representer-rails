@@ -70,7 +70,8 @@ module Presenters
     end # class << self
     
     # Create a presenter. To create a presenter, you need to have a model (to present) and a context.
-    # The only thing used from the +context+ is its capability to answer to certain basic messages
+    #
+    # Note: The only thing used from the +context+ is its capability to answer to certain basic messages
     # like #url_for.
     # 
     def initialize(model, context)
@@ -81,8 +82,6 @@ module Presenters
         context
       end
     end
-    
-    # TODO Make #helper delegates on created view!!!
     
     # Make #logger available in presenters. 
     #
@@ -100,7 +99,7 @@ module Presenters
     #
     def render_as(view, format = nil)
       # Get a view instance from the view class.
-      view_instance = view_instance_from view_class, instance_variables_for_view
+      view_instance = view_instance_from view_class
     
       # Set the format to render in, e.g. :text, :html
       view_instance.template_format = format if format
@@ -110,19 +109,20 @@ module Presenters
       view_instance.render_file(template_path(view), true)
     end
   
-    # 
+    # Returns the instance variables for the view.
+    #
+    # @presenter  : the presenter
+    # @model      : the model of the presenter
+    # @controller : the controller of the presenter
     #
     def instance_variables_for_view
       { :presenter => self, :model => @model, :controller => @controller }
-      # instance_variables.inject(
-      #   { :presenter => self, :model => @model, :controller => @controller }
-      # ) do |vars, var|
-      #   vars[var[1..-1].to_sym] = instance_variable_get(var)
-      #   vars
-      # end
     end
     
+    # Returns a view class to instantiate the view with.
     #
+    # Gets the view class from the controller and also
+    # includes all helpers from/for this presenter.
     #
     def view_class
       view_class = controller.class.template_class
@@ -130,13 +130,13 @@ module Presenters
       view_class
     end
     
+    # Creates a view instance from the given view class.
     #
-    #
-    def view_instance_from(view_class, instance_variables_for_view)
+    def view_instance_from(view_class)
       view_class.new(
         controller.view_paths,
         instance_variables_for_view,
-        controller #RenderingContext.new(self, context) # probably needed if rendering in the controller
+        controller
       )
     end
   
