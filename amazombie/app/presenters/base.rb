@@ -93,9 +93,9 @@ module Presenters
     #   app/views/presenters/this/presenter/template.html.haml
     #   app/views/presenters/this/presenter/template.text.erb
     #
-    # Calling presenter.render_as('template', :html) will render the first
+    # Calling presenter.render_as('template', :html) will render the haml
     # template, calling presenter.render_as('template', :text) will render
-    # the second.
+    # the erb.
     #
     def render_as(view, format = nil)
       # Get a view instance from the view class.
@@ -106,7 +106,8 @@ module Presenters
     
       # Finally, render
       # TODO really render file???
-      view_instance.render_file(template_path(view), true)
+      # view_instance.render_file(template_path(view), true)
+      view_instance.send :render_partial, template_path(view), nil, :presenter => self
     end
   
     # Returns the instance variables for the view.
