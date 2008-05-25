@@ -1,6 +1,7 @@
 class Presenters::Project < Presenters::Base
   
   controller_method :read_fragment, :write_fragment
+  
   # Handles fragment caching in presenters.
   # Use as follows:
   # cache "some_key" do
@@ -22,9 +23,6 @@ class Presenters::Project < Presenters::Base
     write_fragment(name, fragment, {})
     fragment
   end
-  
-  # TODO should go up? Nope. Add a Presenters::ActiveRecord::Base?
-  model_reader :to_param
   
   # All of the rails' standard helpers.
   #
