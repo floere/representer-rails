@@ -133,8 +133,8 @@ describe Presenters::Base do
       presenter = Presenters::Base.new(nil, controller_mock)
       
       controller_mock.should_receive(:logger).once
-      presenter.instance_eval do
-        # can be called in the presenter instance
+      
+      in_the presenter do
         logger
       end
     end
@@ -157,7 +157,9 @@ describe Presenters::Base do
       path_mock = flexmock(:path)
       flexmock(@presenter).should_receive(:template_path).once.with(@view_name).and_return path_mock
       
-      @view_instance_mock.should_receive(:render).once.with(:partial => path_mock, :locals => { :presenter => @presenter })
+      @view_instance_mock.should_receive(:render).once.with(
+        :partial => path_mock, :locals => { :presenter => @presenter }
+      )
     end
     it "should not call template_format=" do
       @view_instance_mock.should_receive(:template_format=).never

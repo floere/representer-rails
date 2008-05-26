@@ -1,5 +1,9 @@
+# Base Module for Presenters.
+#
 module Presenters
   
+  # Base class from which all presenters inherit.
+  #
   class Base
     attr_reader :model, :controller
 
@@ -64,15 +68,17 @@ module Presenters
       # Returns the path from the presenter_view_paths to the actual templates.
       # e.g. "presenters/models/book"
       #
+      # If the class is named
+      #   Presenters::Models::Book
+      # this method will yield
+      #   presenters/models/book
+      #
       def presenter_path
         name.underscore
       end
     end # class << self
     
     # Create a presenter. To create a presenter, you need to have a model (to present) and a context.
-    #
-    # Note: The only thing used from the +context+ is its capability to answer to certain basic messages
-    # like #url_for.
     # 
     def initialize(model, context)
       @model = model

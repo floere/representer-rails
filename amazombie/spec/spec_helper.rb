@@ -264,19 +264,12 @@ def shared(name, &block)
   end
 end
 
-def implicit
-  # does nothing
-end
-
-# module BusinessProfileLoadingHelper
-#   def mock_load_profile_by_urlname(profile)
-#     flexmock(Profile::Business).should_receive(:find_by_url_id_with_deleted).once.and_return(profile)
-#   end
-# end
-
-# Returns the full path of the fixture given by file name in the test directory
-# (we can reuse these fixtures, no need to bloat the repo). 
+# Used to test private methods.
 #
-def fixture_file_path(file_name)
-  File.join(RAILS_ROOT, "test/fixtures/data", file_name)
+# The idea is to replace instance.send :private_method.
+# Now it is rather like:
+# We have the scenario we are in the given instance.
+#
+def in_the(instance, &block)
+  instance.instance_eval(&block)
 end
