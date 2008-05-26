@@ -206,6 +206,23 @@ describe Presenters::Base do
       end
     end
     
+    describe "#view_instance_from" do
+      it "should call new on the given view class" do
+        view_class_mock = flexmock(:view_class)
+        controller_mock = flexmock(:controller)
+        view_paths_mock = flexmock(:view_paths)
+        controller_mock.should_receive(:view_paths).once.and_return(view_paths_mock)
+        instance_variables_mock = flexmock(:instance_variables_mock)
+        
+        flexmock(presenter).should_receive(:controller).twice.and_return(controller_mock)
+        flexmock(presenter).should_receive(:instance_variables_for_view).once.and_return(instance_variables_mock)
+        
+        view_class_mock.should_receive(:new).with(view_paths_mock, instance_variables_mock, controller_mock)
+        
+        presenter.view_instance_from(view_class_mock)
+      end
+    end
+    
     describe "#view_class" do
       before(:each) do
         @view_class_mock = flexmock(:view_class)
@@ -226,22 +243,5 @@ describe Presenters::Base do
       end
     end
   end
-
-  # TODO
-  # describe "#view_instance_from" do
-  #   it "should call new on the given view class" do
-  #     context_mock = flexmock(:context)
-  #     presenter = Presenters::Base.new(nil, context_mock)
-  #     
-  #     view_class_mock = flexmock(:view_class)
-  #     presenter_instance_variables_mock = flexmock(:presenter_instance_variables_mock)
-  #     
-  #     view_paths_mock = flexmock(:view_paths)
-  #     context_mock.should_receive(:view_paths).and_return view_paths_mock
-  #     
-  #     view_class_mock.should_receive(:new).once.with(view_paths_mock, presenter_instance_variables_mock, context_mock)
-  #     presenter.view_instance_from(view_class_mock)
-  #   end
-  # end
   
 end
