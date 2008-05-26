@@ -82,7 +82,13 @@ module Presenters
     # 
     def initialize(model, context)
       @model = model
-      @controller = if context.respond_to?(:controller)
+      @controller = extract_controller_from context
+    end
+    
+    # Extracts a controller from the context.
+    #
+    def extract_controller_from(context)
+      if context.respond_to?(:controller)
         context.controller
       else
         context
