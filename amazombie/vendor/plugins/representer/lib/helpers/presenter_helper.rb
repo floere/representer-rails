@@ -11,6 +11,7 @@ module PresenterHelper
   #
   def specific_mapping
     # your hash of specific model-to-presenter class mappings
+    {}
   end
   
   # Construct a presenter for a collection.
@@ -31,7 +32,7 @@ module PresenterHelper
   def presenter_for(model, context = self)
     begin
       # Is there a specific mapping?
-      presenter_class = (specific_mapping || {})[model.class]
+      presenter_class = specific_mapping[model.class]
       
       # If not, get the default mapping.
       unless presenter_class

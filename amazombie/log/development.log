@@ -50989,3 +50989,778 @@ Rendered presenters/collection/_list (0.00952)
 Rendered presenters/collection/_collection (0.00669)
 Rendered presenters/collection/_table (0.00760)
 Completed in 0.03933 (25 reqs/sec) | Rendering: 0.02789 (70%) | 200 OK [http://localhost/cart]
+
+
+Processing CartController#index (for 127.0.0.1 at 2008-05-26 09:02:17) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--6bdd11668bda0bd44f0fc91cd5521d87801dd5d9
+  Parameters: {"format"=>"html", "action"=>"index", "id"=>"1", "controller"=>"cart"}
+Rendering template within layouts/application
+Rendering cart/index
+Rendered presenters/book/_list_item (0.02112)
+Rendered presenters/book/_list_item (0.00046)
+Rendered presenters/brain/_list_item (0.00194)
+Rendered presenters/book/_list_item (0.00048)
+Rendered presenters/brain/_list_item (0.00069)
+Rendered presenters/book/_list_item (0.00034)
+Rendered presenters/brain/_list_item (0.00075)
+Rendered presenters/book/_list_item (0.00039)
+Rendered presenters/brain/_list_item (0.00086)
+Rendered presenters/book/_list_item (0.00036)
+Rendered presenters/brain/_list_item (0.00062)
+Rendered presenters/book/_list_item (0.00036)
+Rendered presenters/brain/_list_item (0.00079)
+Rendered presenters/book/_list_item (0.00036)
+Rendered presenters/brain/_list_item (0.00060)
+Rendered presenters/book/_list_item (0.00035)
+Rendered presenters/brain/_list_item (0.00065)
+Rendered presenters/book/_list_item (0.00059)
+Rendered presenters/brain/_list_item (0.00063)
+Rendered presenters/book/_list_item (0.00035)
+Rendered presenters/brain/_list_item (0.00066)
+Rendered presenters/collection/_list (0.04679)
+Rendered presenters/book/_collection_item (0.01720)
+Rendered presenters/brain/_collection_item (0.00124)
+Rendered presenters/book/_collection_item (0.00040)
+Rendered presenters/brain/_collection_item (0.00040)
+Rendered presenters/book/_collection_item (0.00048)
+Rendered presenters/brain/_collection_item (0.00047)
+Rendered presenters/book/_collection_item (0.00037)
+Rendered presenters/brain/_collection_item (0.00033)
+Rendered presenters/book/_collection_item (0.00031)
+Rendered presenters/brain/_collection_item (0.00034)
+Rendered presenters/book/_collection_item (0.00209)
+Rendered presenters/brain/_collection_item (0.00058)
+Rendered presenters/book/_collection_item (0.00030)
+Rendered presenters/brain/_collection_item (0.00032)
+Rendered presenters/book/_collection_item (0.00029)
+Rendered presenters/brain/_collection_item (0.00030)
+Rendered presenters/book/_collection_item (0.00029)
+Rendered presenters/brain/_collection_item (0.00034)
+Rendered presenters/book/_collection_item (0.00031)
+Rendered presenters/brain/_collection_item (0.00039)
+Rendered presenters/collection/_collection (0.03710)
+Rendered presenters/book/_table_row (0.00107)
+Rendered presenters/brain/_table_row (0.00137)
+Rendered presenters/book/_table_row (0.00031)
+Rendered presenters/brain/_table_row (0.00048)
+Rendered presenters/book/_table_row (0.00027)
+Rendered presenters/brain/_table_row (0.00052)
+Rendered presenters/book/_table_row (0.00029)
+Rendered presenters/brain/_table_row (0.00049)
+Rendered presenters/book/_table_row (0.00027)
+Rendered presenters/brain/_table_row (0.00059)
+Rendered presenters/book/_table_row (0.00028)
+Rendered presenters/brain/_table_row (0.00052)
+Rendered presenters/book/_table_row (0.00027)
+Rendered presenters/brain/_table_row (0.00050)
+Rendered presenters/book/_table_row (0.00026)
+Rendered presenters/brain/_table_row (0.00051)
+Rendered presenters/book/_table_row (0.00028)
+Rendered presenters/brain/_table_row (0.00049)
+Rendered presenters/book/_table_row (0.00062)
+Rendered presenters/brain/_table_row (0.00055)
+Rendered presenters/collection/_table (0.01852)
+Completed in 0.17972 (5 reqs/sec) | Rendering: 0.16769 (93%) | 200 OK [http://localhost/cart/index/1.html]
+
+
+Processing CartController#index (for 127.0.0.1 at 2008-05-26 09:02:18) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--6bdd11668bda0bd44f0fc91cd5521d87801dd5d9
+  Parameters: {"format"=>"html", "action"=>"index", "id"=>"1", "controller"=>"cart"}
+Rendering template within layouts/application
+Rendering cart/index
+Rendered presenters/book/_list_item (0.00030)
+Rendered presenters/book/_list_item (0.00028)
+Rendered presenters/brain/_list_item (0.00050)
+Rendered presenters/book/_list_item (0.00030)
+Rendered presenters/brain/_list_item (0.00052)
+Rendered presenters/book/_list_item (0.00028)
+Rendered presenters/brain/_list_item (0.00046)
+Rendered presenters/book/_list_item (0.00027)
+Rendered presenters/brain/_list_item (0.00048)
+Rendered presenters/book/_list_item (0.00026)
+Rendered presenters/brain/_list_item (0.00058)
+Rendered presenters/book/_list_item (0.00266)
+Rendered presenters/brain/_list_item (0.00070)
+Rendered presenters/book/_list_item (0.00028)
+Rendered presenters/brain/_list_item (0.00058)
+Rendered presenters/book/_list_item (0.00028)
+Rendered presenters/brain/_list_item (0.00058)
+Rendered presenters/book/_list_item (0.00028)
+Rendered presenters/brain/_list_item (0.00051)
+Rendered presenters/book/_list_item (0.00031)
+Rendered presenters/brain/_list_item (0.00068)
+Rendered presenters/collection/_list (0.01959)
+Rendered presenters/book/_collection_item (0.00029)
+Rendered presenters/brain/_collection_item (0.00030)
+Rendered presenters/book/_collection_item (0.00028)
+Rendered presenters/brain/_collection_item (0.00031)
+Rendered presenters/book/_collection_item (0.00028)
+Rendered presenters/brain/_collection_item (0.00029)
+Rendered presenters/book/_collection_item (0.00028)
+Rendered presenters/brain/_collection_item (0.00031)
+Rendered presenters/book/_collection_item (0.00028)
+Rendered presenters/brain/_collection_item (0.00029)
+Rendered presenters/book/_collection_item (0.00028)
+Rendered presenters/brain/_collection_item (0.00029)
+Rendered presenters/book/_collection_item (0.00027)
+Rendered presenters/brain/_collection_item (0.00029)
+Rendered presenters/book/_collection_item (0.00046)
+Rendered presenters/brain/_collection_item (0.00031)
+Rendered presenters/book/_collection_item (0.00035)
+Rendered presenters/brain/_collection_item (0.00031)
+Rendered presenters/book/_collection_item (0.00028)
+Rendered presenters/brain/_collection_item (0.00029)
+Rendered presenters/collection/_collection (0.07718)
+Rendered presenters/book/_table_row (0.00027)
+Rendered presenters/brain/_table_row (0.00048)
+Rendered presenters/book/_table_row (0.00028)
+Rendered presenters/brain/_table_row (0.00050)
+Rendered presenters/book/_table_row (0.00027)
+Rendered presenters/brain/_table_row (0.00049)
+Rendered presenters/book/_table_row (0.00027)
+Rendered presenters/brain/_table_row (0.00049)
+Rendered presenters/book/_table_row (0.00028)
+Rendered presenters/brain/_table_row (0.00048)
+Rendered presenters/book/_table_row (0.00027)
+Rendered presenters/brain/_table_row (0.00049)
+Rendered presenters/book/_table_row (0.00030)
+Rendered presenters/brain/_table_row (0.00049)
+Rendered presenters/book/_table_row (0.00027)
+Rendered presenters/brain/_table_row (0.00051)
+Rendered presenters/book/_table_row (0.00027)
+Rendered presenters/brain/_table_row (0.00049)
+Rendered presenters/book/_table_row (0.00027)
+Rendered presenters/brain/_table_row (0.00051)
+Rendered presenters/collection/_table (0.01449)
+Completed in 0.13181 (7 reqs/sec) | Rendering: 0.11851 (89%) | 200 OK [http://localhost/cart/index/1.html]
+
+
+Processing CartController#index (for 127.0.0.1 at 2008-05-26 09:05:05) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--6bdd11668bda0bd44f0fc91cd5521d87801dd5d9
+  Parameters: {"format"=>"html", "action"=>"index", "id"=>"1", "controller"=>"cart"}
+Rendering template within layouts/application
+Rendering cart/index
+Rendered presenters/book/_list_item (0.00093)
+Rendered presenters/book/_list_item (0.00032)
+Rendered presenters/brain/_list_item (0.00097)
+Rendered presenters/book/_list_item (0.00027)
+Rendered presenters/brain/_list_item (0.00046)
+Rendered presenters/book/_list_item (0.00029)
+Rendered presenters/brain/_list_item (0.00046)
+Rendered presenters/book/_list_item (0.00026)
+Rendered presenters/brain/_list_item (0.00047)
+Rendered presenters/book/_list_item (0.00026)
+Rendered presenters/brain/_list_item (0.00050)
+Rendered presenters/book/_list_item (0.00026)
+Rendered presenters/brain/_list_item (0.00048)
+Rendered presenters/book/_list_item (0.00026)
+Rendered presenters/brain/_list_item (0.00048)
+Rendered presenters/book/_list_item (0.00027)
+Rendered presenters/brain/_list_item (0.00046)
+Rendered presenters/book/_list_item (0.00026)
+Rendered presenters/brain/_list_item (0.00045)
+Rendered presenters/book/_list_item (0.00027)
+Rendered presenters/brain/_list_item (0.00046)
+Rendered presenters/collection/_list (0.01719)
+Rendered presenters/book/_collection_item (0.00078)
+Rendered presenters/brain/_collection_item (0.00076)
+Rendered presenters/book/_collection_item (0.00027)
+Rendered presenters/brain/_collection_item (0.00028)
+Rendered presenters/book/_collection_item (0.00027)
+Rendered presenters/brain/_collection_item (0.00038)
+Rendered presenters/book/_collection_item (0.00027)
+Rendered presenters/brain/_collection_item (0.00028)
+Rendered presenters/book/_collection_item (0.00027)
+Rendered presenters/brain/_collection_item (0.00047)
+Rendered presenters/book/_collection_item (0.00028)
+Rendered presenters/brain/_collection_item (0.00029)
+Rendered presenters/book/_collection_item (0.00027)
+Rendered presenters/brain/_collection_item (0.00028)
+Rendered presenters/book/_collection_item (0.00027)
+Rendered presenters/brain/_collection_item (0.00034)
+Rendered presenters/book/_collection_item (0.00035)
+Rendered presenters/brain/_collection_item (0.00038)
+Rendered presenters/book/_collection_item (0.00029)
+Rendered presenters/brain/_collection_item (0.00032)
+Rendered presenters/collection/_collection (0.01560)
+Rendered presenters/book/_table_row (0.00119)
+Rendered presenters/brain/_table_row (0.00121)
+Rendered presenters/book/_table_row (0.00028)
+Rendered presenters/brain/_table_row (0.00066)
+Rendered presenters/book/_table_row (0.00028)
+Rendered presenters/brain/_table_row (0.00048)
+Rendered presenters/book/_table_row (0.00026)
+Rendered presenters/brain/_table_row (0.00063)
+Rendered presenters/book/_table_row (0.00104)
+Rendered presenters/brain/_table_row (0.00048)
+Rendered presenters/book/_table_row (0.00028)
+Rendered presenters/brain/_table_row (0.00047)
+Rendered presenters/book/_table_row (0.00026)
+Rendered presenters/brain/_table_row (0.00047)
+Rendered presenters/book/_table_row (0.00027)
+Rendered presenters/brain/_table_row (0.00050)
+Rendered presenters/book/_table_row (0.00026)
+Rendered presenters/brain/_table_row (0.00047)
+Rendered presenters/book/_table_row (0.00026)
+Rendered presenters/brain/_table_row (0.00048)
+Rendered presenters/collection/_table (0.01917)
+Completed in 0.07398 (13 reqs/sec) | Rendering: 0.06043 (81%) | 200 OK [http://localhost/cart/index/1.html]
+
+
+Processing CartController#index (for 127.0.0.1 at 2008-05-26 09:05:06) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--6bdd11668bda0bd44f0fc91cd5521d87801dd5d9
+  Parameters: {"format"=>"html", "action"=>"index", "id"=>"1", "controller"=>"cart"}
+Rendering template within layouts/application
+Rendering cart/index
+Rendered presenters/book/_list_item (0.00239)
+Rendered presenters/book/_list_item (0.00029)
+Rendered presenters/brain/_list_item (0.00050)
+Rendered presenters/book/_list_item (0.00029)
+Rendered presenters/brain/_list_item (0.00067)
+Rendered presenters/book/_list_item (0.00028)
+Rendered presenters/brain/_list_item (0.00046)
+Rendered presenters/book/_list_item (0.00027)
+Rendered presenters/brain/_list_item (0.00050)
+Rendered presenters/book/_list_item (0.00026)
+Rendered presenters/brain/_list_item (0.00047)
+Rendered presenters/book/_list_item (0.00026)
+Rendered presenters/brain/_list_item (0.00047)
+Rendered presenters/book/_list_item (0.00026)
+Rendered presenters/brain/_list_item (0.00059)
+Rendered presenters/book/_list_item (0.00028)
+Rendered presenters/brain/_list_item (0.00048)
+Rendered presenters/book/_list_item (0.00029)
+Rendered presenters/brain/_list_item (0.00079)
+Rendered presenters/book/_list_item (0.00035)
+Rendered presenters/brain/_list_item (0.00062)
+Rendered presenters/collection/_list (0.01713)
+Rendered presenters/book/_collection_item (0.00031)
+Rendered presenters/brain/_collection_item (0.00046)
+Rendered presenters/book/_collection_item (0.00028)
+Rendered presenters/brain/_collection_item (0.00028)
+Rendered presenters/book/_collection_item (0.00028)
+Rendered presenters/brain/_collection_item (0.00030)
+Rendered presenters/book/_collection_item (0.00027)
+Rendered presenters/brain/_collection_item (0.00030)
+Rendered presenters/book/_collection_item (0.00028)
+Rendered presenters/brain/_collection_item (0.00029)
+Rendered presenters/book/_collection_item (0.00028)
+Rendered presenters/brain/_collection_item (0.00029)
+Rendered presenters/book/_collection_item (0.00028)
+Rendered presenters/brain/_collection_item (0.00030)
+Rendered presenters/book/_collection_item (0.00046)
+Rendered presenters/brain/_collection_item (0.00034)
+Rendered presenters/book/_collection_item (0.00029)
+Rendered presenters/brain/_collection_item (0.00056)
+Rendered presenters/book/_collection_item (0.00029)
+Rendered presenters/brain/_collection_item (0.00029)
+Rendered presenters/collection/_collection (0.07523)
+Rendered presenters/book/_table_row (0.00027)
+Rendered presenters/brain/_table_row (0.00051)
+Rendered presenters/book/_table_row (0.00027)
+Rendered presenters/brain/_table_row (0.00049)
+Rendered presenters/book/_table_row (0.00028)
+Rendered presenters/brain/_table_row (0.00050)
+Rendered presenters/book/_table_row (0.00029)
+Rendered presenters/brain/_table_row (0.00049)
+Rendered presenters/book/_table_row (0.00027)
+Rendered presenters/brain/_table_row (0.00059)
+Rendered presenters/book/_table_row (0.00027)
+Rendered presenters/brain/_table_row (0.00048)
+Rendered presenters/book/_table_row (0.00027)
+Rendered presenters/brain/_table_row (0.00048)
+Rendered presenters/book/_table_row (0.00026)
+Rendered presenters/brain/_table_row (0.00050)
+Rendered presenters/book/_table_row (0.00028)
+Rendered presenters/brain/_table_row (0.00050)
+Rendered presenters/book/_table_row (0.00027)
+Rendered presenters/brain/_table_row (0.00287)
+Rendered presenters/collection/_table (0.01676)
+Completed in 0.12993 (7 reqs/sec) | Rendering: 0.11721 (90%) | 200 OK [http://localhost/cart/index/1.html]
+
+
+Processing CartController#index (for 127.0.0.1 at 2008-05-26 09:05:06) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--6bdd11668bda0bd44f0fc91cd5521d87801dd5d9
+  Parameters: {"format"=>"html", "action"=>"index", "id"=>"1", "controller"=>"cart"}
+Rendering template within layouts/application
+Rendering cart/index
+Rendered presenters/book/_list_item (0.00031)
+Rendered presenters/book/_list_item (0.00044)
+Rendered presenters/brain/_list_item (0.00050)
+Rendered presenters/book/_list_item (0.00027)
+Rendered presenters/brain/_list_item (0.00047)
+Rendered presenters/book/_list_item (0.00027)
+Rendered presenters/brain/_list_item (0.00047)
+Rendered presenters/book/_list_item (0.00028)
+Rendered presenters/brain/_list_item (0.00047)
+Rendered presenters/book/_list_item (0.00027)
+Rendered presenters/brain/_list_item (0.00048)
+Rendered presenters/book/_list_item (0.00027)
+Rendered presenters/brain/_list_item (0.00047)
+Rendered presenters/book/_list_item (0.00027)
+Rendered presenters/brain/_list_item (0.00055)
+Rendered presenters/book/_list_item (0.00028)
+Rendered presenters/brain/_list_item (0.00048)
+Rendered presenters/book/_list_item (0.00027)
+Rendered presenters/brain/_list_item (0.00047)
+Rendered presenters/book/_list_item (0.00027)
+Rendered presenters/brain/_list_item (0.00063)
+Rendered presenters/collection/_list (0.01584)
+Rendered presenters/book/_collection_item (0.00027)
+Rendered presenters/brain/_collection_item (0.00029)
+Rendered presenters/book/_collection_item (0.00027)
+Rendered presenters/brain/_collection_item (0.00028)
+Rendered presenters/book/_collection_item (0.00027)
+Rendered presenters/brain/_collection_item (0.00028)
+Rendered presenters/book/_collection_item (0.00027)
+Rendered presenters/brain/_collection_item (0.00030)
+Rendered presenters/book/_collection_item (0.00027)
+Rendered presenters/brain/_collection_item (0.00028)
+Rendered presenters/book/_collection_item (0.00027)
+Rendered presenters/brain/_collection_item (0.00028)
+Rendered presenters/book/_collection_item (0.00028)
+Rendered presenters/brain/_collection_item (0.00048)
+Rendered presenters/book/_collection_item (0.00034)
+Rendered presenters/brain/_collection_item (0.00037)
+Rendered presenters/book/_collection_item (0.00030)
+Rendered presenters/brain/_collection_item (0.00040)
+Rendered presenters/book/_collection_item (0.00030)
+Rendered presenters/brain/_collection_item (0.00143)
+Rendered presenters/collection/_collection (0.01440)
+Rendered presenters/book/_table_row (0.00029)
+Rendered presenters/brain/_table_row (0.00072)
+Rendered presenters/book/_table_row (0.00031)
+Rendered presenters/brain/_table_row (0.00063)
+Rendered presenters/book/_table_row (0.00039)
+Rendered presenters/brain/_table_row (0.00064)
+Rendered presenters/book/_table_row (0.00028)
+Rendered presenters/brain/_table_row (0.00082)
+Rendered presenters/book/_table_row (0.00028)
+Rendered presenters/brain/_table_row (0.00052)
+Rendered presenters/book/_table_row (0.00031)
+Rendered presenters/brain/_table_row (0.00068)
+Rendered presenters/book/_table_row (0.00030)
+Rendered presenters/brain/_table_row (0.00048)
+Rendered presenters/book/_table_row (0.00030)
+Rendered presenters/brain/_table_row (0.00049)
+Rendered presenters/book/_table_row (0.00027)
+Rendered presenters/brain/_table_row (0.00046)
+Rendered presenters/book/_table_row (0.00027)
+Rendered presenters/brain/_table_row (0.00048)
+Rendered presenters/collection/_table (0.02121)
+Completed in 0.07620 (13 reqs/sec) | Rendering: 0.05705 (74%) | 200 OK [http://localhost/cart/index/1.html]
+
+
+Processing CartController#index (for 127.0.0.1 at 2008-05-26 09:05:07) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--6bdd11668bda0bd44f0fc91cd5521d87801dd5d9
+  Parameters: {"format"=>"html", "action"=>"index", "id"=>"1", "controller"=>"cart"}
+Rendering template within layouts/application
+Rendering cart/index
+Rendered presenters/book/_list_item (0.00031)
+Rendered presenters/book/_list_item (0.00029)
+Rendered presenters/brain/_list_item (0.00084)
+Rendered presenters/book/_list_item (0.00030)
+Rendered presenters/brain/_list_item (0.00047)
+Rendered presenters/book/_list_item (0.00027)
+Rendered presenters/brain/_list_item (0.00047)
+Rendered presenters/book/_list_item (0.00029)
+Rendered presenters/brain/_list_item (0.00051)
+Rendered presenters/book/_list_item (0.00027)
+Rendered presenters/brain/_list_item (0.00048)
+Rendered presenters/book/_list_item (0.00026)
+Rendered presenters/brain/_list_item (0.00047)
+Rendered presenters/book/_list_item (0.00027)
+Rendered presenters/brain/_list_item (0.00047)
+Rendered presenters/book/_list_item (0.00028)
+Rendered presenters/brain/_list_item (0.00047)
+Rendered presenters/book/_list_item (0.00026)
+Rendered presenters/brain/_list_item (0.00046)
+Rendered presenters/book/_list_item (0.00026)
+Rendered presenters/brain/_list_item (0.00047)
+Rendered presenters/collection/_list (0.01609)
+Rendered presenters/book/_collection_item (0.00028)
+Rendered presenters/brain/_collection_item (0.00028)
+Rendered presenters/book/_collection_item (0.00027)
+Rendered presenters/brain/_collection_item (0.00028)
+Rendered presenters/book/_collection_item (0.00028)
+Rendered presenters/brain/_collection_item (0.00028)
+Rendered presenters/book/_collection_item (0.00028)
+Rendered presenters/brain/_collection_item (0.00029)
+Rendered presenters/book/_collection_item (0.00028)
+Rendered presenters/brain/_collection_item (0.00030)
+Rendered presenters/book/_collection_item (0.00028)
+Rendered presenters/brain/_collection_item (0.00031)
+Rendered presenters/book/_collection_item (0.00028)
+Rendered presenters/brain/_collection_item (0.00031)
+Rendered presenters/book/_collection_item (0.00028)
+Rendered presenters/brain/_collection_item (0.00030)
+Rendered presenters/book/_collection_item (0.00029)
+Rendered presenters/brain/_collection_item (0.00030)
+Rendered presenters/book/_collection_item (0.00028)
+Rendered presenters/brain/_collection_item (0.00043)
+Rendered presenters/collection/_collection (0.01314)
+Rendered presenters/book/_table_row (0.00028)
+Rendered presenters/brain/_table_row (0.00057)
+Rendered presenters/book/_table_row (0.00032)
+Rendered presenters/brain/_table_row (0.00060)
+Rendered presenters/book/_table_row (0.00033)
+Rendered presenters/brain/_table_row (0.00057)
+Rendered presenters/book/_table_row (0.00030)
+Rendered presenters/brain/_table_row (0.00061)
+Rendered presenters/book/_table_row (0.00031)
+Rendered presenters/brain/_table_row (0.00058)
+Rendered presenters/book/_table_row (0.00034)
+Rendered presenters/brain/_table_row (0.00213)
+Rendered presenters/book/_table_row (0.00030)
+Rendered presenters/brain/_table_row (0.00060)
+Rendered presenters/book/_table_row (0.00028)
+Rendered presenters/brain/_table_row (0.00062)
+Rendered presenters/book/_table_row (0.00043)
+Rendered presenters/brain/_table_row (0.00146)
+Rendered presenters/book/_table_row (0.00035)
+Rendered presenters/brain/_table_row (0.00050)
+Rendered presenters/collection/_table (0.08607)
+Completed in 0.13698 (7 reqs/sec) | Rendering: 0.12102 (88%) | 200 OK [http://localhost/cart/index/1.html]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-05-26 09:19:59) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--6bdd11668bda0bd44f0fc91cd5521d87801dd5d9
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/profile/tet/events.atom" with {:method=>:get}):
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1441:in `recognize_path'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1424:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-05-26 10:15:42) [GET]
+  Session ID: 18625028604b6d1fb074bb097c8fba3f
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/venues/b33/events.atom" with {:method=>:get}):
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1441:in `recognize_path'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1424:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-05-26 10:19:59) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--6bdd11668bda0bd44f0fc91cd5521d87801dd5d9
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/profile/tet/events.atom" with {:method=>:get}):
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1441:in `recognize_path'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1424:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-05-26 11:01:42) [GET]
+  Session ID: 3b36256ae6f5f3142947965f89f1a83d
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/venues/b33/events.atom" with {:method=>:get}):
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1441:in `recognize_path'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1424:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-05-26 11:20:00) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--6bdd11668bda0bd44f0fc91cd5521d87801dd5d9
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/profile/tet/events.atom" with {:method=>:get}):
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1441:in `recognize_path'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1424:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-05-26 11:44:36) [GET]
+  Session ID: 2c95ce0d9320eebcf55afbe6b9458555
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/venues/b33/events.atom" with {:method=>:get}):
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1441:in `recognize_path'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1424:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-05-26 11:47:39) [GET]
+  Session ID: 74bb50af7b8f637a00ffefcb617f1ca6
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/venues/b33/events.atom" with {:method=>:get}):
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1441:in `recognize_path'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1424:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)

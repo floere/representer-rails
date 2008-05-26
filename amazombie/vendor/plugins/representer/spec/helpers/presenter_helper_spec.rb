@@ -1,4 +1,6 @@
-require File.dirname(__FILE__) + '/../spec_helper'
+require File.join(File.dirname(__FILE__), '../spec_helper')
+
+require 'helpers/presenter_helper'
 
 describe PresenterHelper do
   

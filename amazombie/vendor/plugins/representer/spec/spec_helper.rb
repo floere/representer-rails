@@ -1,5 +1,7 @@
 require 'spec'
 require 'flexmock'
+require 'active_support'
+require 'action_controller'
 
 $:.unshift File.dirname(__FILE__)
 $:.unshift File.join(File.dirname(__FILE__), '../lib')
