@@ -109,15 +109,15 @@ module Presenters
     # template, calling presenter.render_as('template', :text) will render
     # the erb.
     #
-    def render_as(view, format = nil)
+    def render_as(view_name, format = nil)
       # Get a view instance from the view class.
-      view_instance = view_instance_from view_class
+      view = view_instance
     
       # Set the format to render in, e.g. :text, :html
-      view_instance.template_format = format if format
+      view.template_format = format if format
     
       # Finally, render
-      view_instance.render :partial => template_path(view), :locals => { :presenter => self }
+      view.render :partial => template_path(view_name), :locals => { :presenter => self }
     end
   
     # Returns the instance variables for the view.
@@ -135,20 +135,19 @@ module Presenters
     # Gets the view class from the controller and also
     # includes all helpers from/for this presenter.
     #
-    def view_class
-      view_class = controller.class.template_class
-      view_class.send(:include, master_helper_module)
-      view_class
-    end
+    # def view_class
+    #   view_class = controller.class.template_class
+    #   TODO REPLACE THIS
+    #   view_class.send(:include, master_helper_module)
+    #   view_class
+    # end
     
     # Creates a view instance from the given view class.
     #
-    def view_instance_from(view_class)
-      view_class.new(
-        controller.view_paths,
-        instance_variables_for_view,
-        controller
-      )
+    def view_instance
+      view = ActionView::Base.new(controller.class.view_paths, {}, controller)
+      view.extend master_helper_module
+      view
     end
   
     # Returns the root of this presenters views with the template name appended.
