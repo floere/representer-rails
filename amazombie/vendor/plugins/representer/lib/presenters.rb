@@ -1,5 +1,3 @@
 require 'active_support'
 
-module Presenters
-
-end
+module Presenters; end

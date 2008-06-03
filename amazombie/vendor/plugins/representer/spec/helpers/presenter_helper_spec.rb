@@ -6,12 +6,12 @@ describe PresenterHelper do
   
   describe "collection_presenter_for" do
     it "should return kind of a Presenters::Collection" do
-      collection_presenter_for([]).should be_kind_of(Presenters::Collection)
+      collection_presenter_for([]).should be_kind_of(PresenterHelper::Collection)
     end
     it "should pass any parameters directly through" do
       collection_mock = flexmock(:collection)
       context_mock = flexmock(:context)
-      flexmock(Presenters::Collection).should_receive(:new).with(collection_mock, context_mock).once
+      flexmock(PresenterHelper::Collection).should_receive(:new).with(collection_mock, context_mock).once
       collection_presenter_for(collection_mock, context_mock)
     end
   end
@@ -85,14 +85,14 @@ describe PresenterHelper do
     end
   end
   
-  describe Presenters::Collection do
+  describe PresenterHelper::Collection do
 
     attr_reader :collection_mock, :context_mock, :collection_presenter
 
     before(:each) do
       @collection_mock = flexmock(:collection)
       @context_mock = flexmock(:context)
-      @collection_presenter = Presenters::Collection.new(@collection_mock, @context_mock)
+      @collection_presenter = PresenterHelper::Collection.new(@collection_mock, @context_mock)
     end
 
     describe "list" do

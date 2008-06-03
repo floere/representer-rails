@@ -17,7 +17,7 @@ module PresenterHelper
   # Construct a presenter for a collection.
   #
   def collection_presenter_for(pagination_array, context=self)
-    Presenters::Collection.new(pagination_array, context)
+    Collection.new(pagination_array, context)
   end
   
   # Create a new presenter instance for the given model instance
@@ -30,24 +30,20 @@ module PresenterHelper
   # you'd like to change the default.
   #
   def presenter_for(model, context = self)
-    begin
-      # Is there a specific mapping?
-      presenter_class = specific_mapping[model.class]
-      
-      # If not, get the default mapping.
-      unless presenter_class
-        presenter_class = default_presenter_class_for(model)
-      end
-      
-      unless presenter_class < Presenters::Base
-        raise NotAPresenterError.new("#{presenter_class} is not a presenter.") 
-      end
-      
-      # And create a presenter for the model.
-      presenter_class.new(model, context)
-    rescue NameError => e
-      raise MissingPresenterError.new("No presenter for #{model.class}.")
+    # Is there a specific mapping?
+    presenter_class = specific_mapping[model.class]
+    
+    # If not, get the default mapping.
+    presenter_class = default_presenter_class_for(model) unless presenter_class
+    
+    unless presenter_class < Presenters::Base
+      raise NotAPresenterError.new("#{presenter_class} is not a presenter.")
     end
+    
+    # And create a presenter for the model.
+    presenter_class.new(model, context)
+  rescue NameError => e
+    raise MissingPresenterError.new("No presenter for #{model.class}.")
   end
   
   # Returns the default presenter class for the given model.
@@ -59,14 +55,13 @@ module PresenterHelper
     "Presenters::#{model.class.name}".constantize
   end
   
-  # The Collection Presenter has the purpose of presenting
-  # collections with the following features:
+  # The Collection presenter helper has the purpose of presenting presentable collections.
   # * Render as list
   # * Render as table
   # * Render as collection
   # * Page navigation
   #
-  class Presenters::Collection
+  class Collection
 
     def initialize(collection, context)
       @collection, @context = collection, context
