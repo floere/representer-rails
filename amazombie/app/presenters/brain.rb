@@ -6,7 +6,7 @@ class Presenters::Brain < Presenters::Product
   # but can you spot the wet parts?
   #
   def description_line
-    %Q{"#{model.former_host}", IQ #{model.iq} &mdash; #{model.price} EUR}
+    %Q{"#{model.former_host}", IQ #{model.iq} — #{model.price} EUR}
   end
   
   def description
