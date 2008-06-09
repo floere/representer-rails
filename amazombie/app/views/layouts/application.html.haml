@@ -8,7 +8,9 @@
     .navi
       = cart_controller_method_links
     .center
-      = image_tag 'sections_welcome.gif'
+      = image_tag 'sections_welcome.gif', :usemap => '#sections'
+    %map{ :name => :sections }
+      %area{ :title => 'Your shopping cart', :href => '/', :coords => '407,0,541,28', :shape => 'rect' }
     %div{ :class => 'center colored' }
       = image_tag 'guides.gif'
     #left
