@@ -1,10 +1,10 @@
 class Book < Product
   attr_accessor :author, :title, :description, :pages
   
-  def initialize
-    @title = title_generator
+  def initialize(zombie=false)
+    @title = title_generator(zombie)
     @pages = 190 + rand(700)
-    super
+    super()
   end
   
   # This is an example how absolutely NOT to do it
@@ -13,7 +13,7 @@ class Book < Product
     %Q{"#{title}", #{pages} S. &mdash; #{price}}
   end
   
-  def title_generator
+  def title_generator(zombie)
     phrases = [
       '%ss in a Nutshell',
       'Short Guide to %ss',
@@ -29,7 +29,8 @@ class Book < Product
       'The %s Bible',
       'Gardening with %s (aka The Pickaxe)'
     ]
-    words = %w{Brain Chainsaw Skull Zombie Eyesoup Living\ Dead Voodoo}
+    words = %w{Ruby Python Smalltalk Java Javascript Rails}
+    words = %w{Brain Chainsaw Skull Zombie Eyesoup Living\ Dead Voodoo} if zombie
     phrases[rand(phrases.size)] % words.sort_by(&:rand)
   end
   

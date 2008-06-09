@@ -35,6 +35,13 @@ class CartController < ApplicationController
     end
   end
   
+  def load_zombie_books(count=10)
+    @items ||= []
+    count.times do
+      @items << Book.new(true)
+    end
+  end
+  
   def load_brains(count=10)
     @items ||= []
     count.times do
