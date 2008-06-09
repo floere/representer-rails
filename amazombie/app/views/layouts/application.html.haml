@@ -7,10 +7,8 @@
   %body
     .navi
       = cart_controller_method_links
-    #logo
-      = image_tag 'logo.png'
     .center
-      = image_tag 'sections_welcome.gif', :usemap => '#sections'
+      = image_tag 'sections_welcome.png', :usemap => '#sections'
     %map{ :name => :sections }
       %area{ :title => 'Your shopping cart', :href => '/', :coords => '407,0,541,28', :shape => 'rect' }
     %div{ :class => 'center colored' }
