@@ -1,2 +1,307 @@
-= stylesheet_link_tag 'collections'
-= yield
+//!!!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+%html
+  %head
+    %title
+      Amazombie –– Books & Brains
+    = stylesheet_link_tag :all
+  %body
+    // BGCOLOR="#ffffff" LINK="#003399" ALINK="#ff9933" VLINK="#996633" TEXT="#000000">
+    .center
+      = image_tag 'sections_welcome.gif'
+    %div{ :class => 'center colored' }
+      = image_tag 'guides.gif'
+    = yield
+
+//<BODY BGCOLOR="#ffffff" LINK="#003399" ALINK="#ff9933" VLINK="#996633" TEXT="#000000">
+//<A NAME="top"><!--Top of Page--></a>
+//<TABLE BORDER=0 WIDTH=100% CELLSPACING=0 CELLPADDING=0>
+//	<TR ALIGN="center" BGCOLOR="#ffffff">
+//		<TD><IMG SRC="/images/sections_home.gif" WIDTH=590 HEIGHT=59 ALT="" BORDER=0 HSPACE=0 VSPACE=0 USEMAP="#sections"></TD>
+//<MAP NAME="sections">
+//	<AREA SHAPE="rect" COORDS="546,0,590,28" HREF="/brains.html?brainID=A%20Help%20Desk%20Employee" TARGET="_top" TITLE="Help" ALT="Help" >
+//	<AREA SHAPE="rect" COORDS="407,0,541,28" HREF="/brains.html?brainID=Your%20Accountant" TARGET="_top" TITLE="Your Account" ALT="Your Account" >
+//	<AREA SHAPE="rect" COORDS="462,32,590,59" HREF="/chat" TARGET="_top" TITLE="Zombie Chat" ALT="Zombie Chat" >
+//	<AREA SHAPE="rect" COORDS="297,32,461,59" HREF="/brains.html?brainType=CelebrityBrains" >
+//	<AREA SHAPE="rect" COORDS="162,32,297,59" HREF="/brains.html?brainType=OtherBrains" TARGET="_top" TITLE="Other Brains" ALT="Other Brains" >
+//	<AREA SHAPE="rect" COORDS="92,33,162,59" HREF="brains.html" TARGET="_top" TITLE="Brains" ALT="Brains" >
+//	<AREA SHAPE="rect" COORDS="0,34,92,59" HREF="/" TARGET="_top" TITLE="Welcome" ALT="Welcome" >
+//</MAP>
+//	</TR>
+//	
+//	<TR BGCOLOR="#006699">
+//		<TD ALIGN="center"><IMG SRC="/images/guides.gif" WIDTH=590 HEIGHT=28 ALT="" BORDER=0 HSPACE=0 VSPACE=0 USEMAP="#guides"></TD>
+//<MAP NAME="guides">
+//	<AREA SHAPE="rect" COORDS="466,0,588,26" HREF="/chat" TARGET="_top" TITLE="Zombie Chat" ALT="Zombie Chat" >
+//	<AREA SHAPE="rect" COORDS="362,0,462,26" HREF="/brains.html?brainID=A%20Tour%20Guide" TARGET="_top" TITLE="Site Guide" ALT="Site Guide" >
+//	<AREA SHAPE="rect" COORDS="220,0,360,26" HREF="/brains.html?brainID=A%20Guarantor" TARGET="_top" TITLE="Our Guarantee" ALT="Our Guarantee" >
+//	<AREA SHAPE="rect" COORDS="100,0,218,26" HREF="/brains.html?brainID=Gift" TARGET="_top" TITLE="Gift Services" ALT="Gift Services" >
+//	<AREA SHAPE="rect" COORDS="0,0,98,26" HREF="/brains.html?brainID=An%20Order%20Taker" TARGET="_top" TITLE="How To Order" ALT="How To Order" >
+//</MAP>
+//	</TR>
+//
+//</TABLE>
+//<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+//	<TR>
+//		<TD WIDTH="171" VALIGN="top">
+//			&nbsp;<BR>
+//			<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+//				<TR VALIGN=bottom ALIGN=center><TD><IMG SRC="/images/search.gif" WIDTH=171 HEIGHT=19 ALT="Search" BORDER=0 HSPACE=0 VSPACE=0></TD></TR>
+//				<TR valign=top align=center>
+//					<TD>
+//						<TABLE BORDER=0 WIDTH= 171 CELLPADDING=1 CELLSPACING=0 BGCOLOR=#708090 ><TR><TD WIDTH=100%>
+//							<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR=#708090><TR><TD BGCOLOR=#ffcc66 VALIGN="top" WIDTH=100%>
+//<FORM METHOD="post" ACTION="/brains.html">
+//<SELECT NAME="index">
+//	<OPTION VALUE="brains">Brains
+//	<OPTION VALUE="otherbrains">Other Brains
+//	<OPTION VALUE="celebrity">Celebrity Brains
+//	<OPTION VALUE="blended" SELECTED>All Products
+//</SELECT>
+//<INPUT TYPE="text" NAME="field-keywords" SIZE="15">
+//<INPUT TYPE="image" HEIGHT=21 WIDTH=21 BORDER=0 VALUE="Go" NAME="Go" SRC="/images/go-button-gateway.gif" ALIGN="absmiddle">
+//</FORM>
+//<FONT FACE="Verdana,Arial,Helvetica" SIZE="-2">Search of the Day: <NOBR><A HREF="/brains.html">brains</A></NOBR><FONT>
+//							</TD></TR></TABLE>
+//						</TD></TR></TABLE>
+//					</TD>
+//				</TR>
+//			</TABLE>
+//			<BR CLEAR=left>
+//			<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+//				<TR VALIGN="bottom" ALIGN="center"><TD><IMG SRC="/images/browse.gif" WIDTH=171 HEIGHT=19 ALT="Browse" BORDER=0 HSPACE=0 VSPACE=0></TD></TR>
+//				<TR VALIGN="top" ALIGN="center">
+//					<TD> 
+//						<TABLE BORDER=0 WIDTH= 171 CELLPADDING=1 CELLSPACING=0 BGCOLOR=#708090 ><TR><TD WIDTH=100%>
+//							<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR=#708090><TR><TD BGCOLOR=#ffffff VALIGN=top WIDTH=100%>
+//<FONT FACE="Verdana,Arial,Helvetica"><B>&#149;</B><A HREF="/brains.html"><B>Brains</B></A><BR> 
+//<FONT SIZE=-1><A HREF="/brains.html?brainID=Your%20Neighbor">Brains</A>, <A HREF="/brains.html?brainID=A%20Small%20Child">Brains</A>, <A HREF="/brains.html?brainID=Your%20Ex-Girlfriend">Brains</A>...</FONT></FONT><BR>
+//<FONT FACE="Verdana,Arial,Helvetica"><B>&#149;</B><A HREF="/brains.html?brainType=OtherBrains"><B>Other Brains</B></A><BR>
+//<FONT SIZE=-1><A HREF="/brains.html?brainType=OtherBrains&brainID=Your%20Worst%20Enemy">Other Brains</A>, <A HREF="/brains.html?brainType=OtherBrains&brainID=Your%20Boss">More Other Brains</A>, <A HREF="/brains.html?brainType=OtherBrains&brainID=Danny%20Frost">Even More Other Brains</A>...</FONT></FONT><BR>
+//<FONT FACE="Verdana,Arial,Helvetica"><B>&#149;</B><A HREF="/brains.html?brainType=CelebrityBrains"><B>Celebrity Brains</B></A><BR>
+//<FONT SIZE=-1><A HREF="/brains.html?brainType=CelebrityBrains&celebrityID=Billy%20Idol">Rock Brains</A>, <A HREF="/brains.html?brainType=CelebrityBrains&celebrityID=Pauly%20Shore">Movie Star Brains</A>, <A HREF="/brains.html?brainType=CelebrityBrains&celebrityID=Jon%20Rosenberg">Cartoonist Brains</A>...</FONT></FONT><BR>
+//<FONT FACE="Verdana,Arial,Helvetica"><B>&#149;</B><A HREF="/brains.html"><B>Brains</B></A><BR>
+//<FONT SIZE=-1><A HREF="/brains.html?brainID=Your%20Roommate">Brains</A>, <A HREF="/brains.html?brainID=A%20Homeless%20Person">Brains</A>, <A HREF="/brains.html?brainID=Andrew%20Mason">Brains</A>...</FONT></FONT><BR>
+//<FONT FACE="Verdana,Arial,Helvetica"><B>&#149;</B><A HREF="/brains.html?brainType=OtherBrains"><B>Other Brains</B></A><BR>
+//<FONT SIZE=-1><A HREF="/brains.html?brainType=OtherBrains&brainID=Stephanie%20Duda">Other Brains</A>, <A HREF="/brains.html?brainType=OtherBrains&brainID=Phillip%20Karlsson">More Other Brains</A>, <A HREF="/brains.html?brainType=OtherBrains&brainID=Jerrell">Even More Other Brains</A>...</FONT></FONT><BR>
+//<FONT FACE="Verdana,Arial,Helvetica"><B>&#149;</B><A HREF="/brains.html?brainType=CelebrityBrains"><b>Celebrity Brains</b></A><BR>
+//<FONT SIZE=-1><A HREF="/brains.html?brainType=CelebrityBrains&celebrityID=The%20Backstreet%20Boys">Rock Brains</A>, <A HREF="/brains.html?brainType=CelebrityBrains&celebrityID=Clint%20Howard">Movie Star Brains</A>, <A HREF="/brains.html?brainType=CelebrityBrains&celebrityID=Brooke%20Shields">T.V. Stars</A>...</FONT></FONT><BR>
+//<FONT FACE="Verdana,Arial,Helvetica"><B>&#149;</B><A HREF="/brains.html"><B>Brains</B></A><BR>
+//<FONT SIZE=-1><A HREF="/brains.html">Brains</A>, <A HREF="/brains.html">Brains</A>, <A HREF="/brains.html">Brains</A>...</FONT></FONT><BR>
+//<FONT FACE="Verdana,Arial,Helvetica"><B>&#149;</B><A HREF="/brains.html?brainType=OtherBrains"><B>Other Brains</B></A><BR>
+//<FONT SIZE=-1><A HREF="/brains.html?brainType=OtherBrains">Other Brains</A>, <A HREF="/brains.html?brainType=OtherBrains">More Other Brains</A>, <A HREF="/brains.html?brainType=OtherBrains">Even More Other Brains</A>...</FONT></FONT><BR>
+//<FONT FACE="Verdana,Arial,Helvetica"><B>&#149;</B><A HREF="/brains.html?brainType=CelebrityBrains"><B>Celebrity Brains</B></A><BR>
+//<FONT SIZE=-1><A HREF="/brains.html?brainType=CelebrityBrains&celebrityID=Eddie%20Vedder">Rock Brains</A>, <A HREF="/brains.html?brainType=CelebrityBrains&celebrityID=Andie%20McDowell">Movie Star Brains</A>, <A HREF="/brains.html?brainType=CelebrityBrains&celebrityID=Scott%20Baio">T.V. Stars</A>...</FONT></FONT><BR>
+//							</TD></TR> </TABLE>
+//						</TD></TR></TABLE>
+//					</TD>
+//				</TR>
+//			</TABLE> 
+//			<BR CLEAR=left>
+//			<TABLE BORDER=0 WIDTH= 171 CELLPADDING=1 CELLSPACING=0 BGCOLOR=#cccc99 ><TR><TD WIDTH=100%>
+//				<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR=#cccc99>
+//					<TR>
+//						<TD BGCOLOR=#ffffff VALIGN=top WIDTH=100%>
+//							<FONT FACE="Verdana,Arial,Helvetica" SIZE="-1"><B>Community</B></FONT><BR>
+//							<FONT FACE="Verdana,Arial,Helvetica" SIZE="-1">&#149; <A HREF="/chat">Zombie Chat</A></FONT>
+//							<P>
+//							<FONT FACE="Verdana,Arial,Helvetica" SIZE="-1"><B><A HREF="/brains.html?brainID=Gift">Gift Services</A></B></FONT><BR>
+//							<FONT FACE="Verdana,Arial,Helvetica" SIZE="-1">&#149; <A HREF="/brains.html?brainID=Gift%20Certificate">Gift Certificates</A><BR>
+//							&#149; <A HREF="/brains.html?brainID=Special%20Person">Special-Occasion Brains</A><BR>
+//							&#149; <A HREF="/brains.html">Brain Lists</A></FONT>
+//							<P>
+//							<FONT FACE="Verdana,Arial,Helvetica" SIZE="-1"><B>Need Help?</B></FONT><BR>
+//							<FONT FACE="Verdana,Arial,Helvetica" SIZE="-1">&#149; <A HREF="/brains.html?brainID=Help%20Desk%20Staffer">Help Desk</A><BR>
+//							&#149; <A HREF="/brains.html?brainID=Tour%20Guide">Site Guide</A><BR>
+//							&#149; <A HREF="/brains.html?brainID=FedEx%20Employee">Shipping Policies</A></FONT>
+//							<P>
+//							<FONT FACE="Verdana,Arial,Helvetica" SIZE="-1"><B>More to Explore</B></FONT><BR>
+//							<FONT FACE="Verdana,Arial,Helvetica" size=-1>&#149; <A HREF="http://www.bobbins.org/">Bobbins</A><BR>
+//							&#149; <A HREF="http://www.whenigrowup.net/">When I Grow Up</A><BR>
+//							&#149; <a href="http://www.waitingforbob.com/">Waiting For Bob</A><BR>
+//							&#149; <A HREF="http://www.wfcomics.com/beetle/">The Japanese Beetle</A><BR>
+//							&#149; <A HREF="http://www.peterzale.com/helen/">Helen, Sweetheart of the Internet</A><BR>
+//							&#149; <A HREF="http://www.mpog.com/pvp/">PvP</A><BR>
+//							&#149; <A HREF="http://www.superosity.com/">Superosity</A><BR>
+//							&#149; <A HREF="http://people.mn.mediaone.net/pmckeown/">?</A><BR>
+//							&#149; <A HREF="http://www.toytrunkrailroad.com/">Toy Trunk Railroad</A><BR>
+//							&#149; <A HREF="http://www.userfriendly.org/static/">User Friendly</A></FONT>
+//						</TD>
+//					</TR>
+//				</TABLE>
+//			</TD></TR></TABLE>
+//		</TD>
+//		<TD VALIGN="top"></TD>
+//		<TD BGCOLOR="#ffffff">&nbsp;&nbsp;</TD>
+//		<TD VALIGN="top">
+//			<P>
+//			<TABLE CELLPADDING=4 CELLSPACING=0 BORDER=0 ALIGN="right">
+//				<TR>
+//					<TD VALIGN="top">
+//						<FONT FACE="Verdana,Arial,Helvetica" SIZE="-2">
+//<SCRIPT LANGUAGE="Javascript">
+//<!-- 
+//
+//// Array of day names
+//var dayNames = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+//
+//// Array of month Names
+//var monthNames = new Array(
+//"January","February","March","April","May","June","July","August","September","October","November","December");
+//
+//var now = new Date();
+//document.write(dayNames[now.getDay()] + ", " + monthNames[now.getMonth()] + " " + now.getDate() + ", " +  now.getFullYear());
+//
+//// -->
+//</SCRIPT>
+//						</FONT><BR>
+//						<IMG SRC="/images/we-welcome-brains.gif" WIDTH=102 HEIGHT=24 BORDER=0 ALT="We welcome Brains">
+//					</TD>
+//				</TR>
+//			</TABLE>
+//			&nbsp;<BR>
+//			<IMG SRC="/images/title.gif" WIDTH=254 HEIGHT=45 ALT="Brains4Zombies.com" BORDER=0 HSPACE=5 VSPACE=5><BR CLEAR=left>
+//			<P>
+//			<FONT FACE="Verdana,Arial,Helvetica" COLOR=#cc6600 SIZE=-1><B>Hello,  Undead Zombie.</B></FONT><FONT FACE="Verdana,Arial,Helvetica" SIZE=-2>(If you're not an Undead Zombie, <A HREF="http://www.goats.com/">click here</A>.)</FONT><BR>
+//			<FONT FACE="Verdana,Arial,Helvetica" SIZE=-1>We have <A HREF="/brains.html">brains</A> for you in <A HREF="/brains.html">Brains</A>, <A HREF="/brains.html?brainType=OtherBrains">Other Brains</A>, and <A HREF="/brains.html?brainType=CelebrityBrains">Celebrity Brains</A>.</FONT>
+//			<TABLE BORDER=0 ALIGN="right" WIDTH=200><TR><TD>
+//				<TABLE BORDER=0 WIDTH=194 CELLPADDING=1 CELLSPACING=0 BGCOLOR=#cccc99  ><TR><TD width=100%>
+//					<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR=#cccc99><TR><TD BGCOLOR=#ffffff VALIGN=top WIDTH=100%>
+//						<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+//							<TR>
+//								<TD VALIGN=top><A HREF="/brains.html"><IMG SRC="/images/brain4.gif" WIDTH=83 HEIGHT=101 ALT="Brains!" ALIGN="left" HSPACE=4 VSPACE=0 BORDER=0></A></TD>
+//								<TD VALIGN=top><FONT FACE="Verdana,Arial,Helvetica" SIZE="-1">Guarantee holiday gift bliss with <A HREF="/brains.html">Brains</A>!</FONT></TD>
+//							</TR>
+//						</TABLE>
+//					</TD></TR></TABLE>
+//				</TD></TR></TABLE>
+//				<BR CLEAR=all>
+//				<TABLE BORDER=0 WIDTH=194 CELLPADDING=1 CELLSPACING=0 BGCOLOR=#cccc99 ><TR><TD WIDTH=100%>
+//					<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR="#cccc99">
+//						<TR><TD VALIGN="middle" ALIGN="left" BGCOLOR="#eeeecc"><STRONG><FONT FACE="Verdana,Arial,Helvetica" SIZE=-1>Your Quick Picks</FONT></STRONG></TD></TR>
+//						<TR>
+//							<TD BGCOLOR="#ffffff" VALIGN=top WIDTH=100%>
+//								<FONT FACE="Verdana,Arial,Helvetica" SIZE=-1>
+//<OL>
+//	<LI><A HREF="/brains.html">Brains</A><BR>
+//		from Someone's Head
+//	<LI><A HREF="/brains.html?brainType=OtherBrains">Other Brains</A><BR>
+//		from Someone Else's Head
+//	<li><A HREF="/brains.html?brainType=CelebrityBrains&celebrityID=Rudolph%20Giuliani">Celebrity Brains</A><BR>
+//		from Rudolph Giuliani's Head
+//</OL>
+//								<P>
+//								<IMG SRC="/images/orange-arrow.gif" WIDTH=10 HEIGHT=9 BORDER=0> <B>More <A HREF="/brains.html">brain</A>, <A HREF="/brains.html?brainType=OtherBrains">other brain</A>, and <A HREF="/brains.html?brainType=CelebrityBrains">celebrity brain</A> recommendations
+//								</P>
+//								</FONT>
+//							</TD>
+//						</TR>
+//					</TABLE>
+//				</TD></TR></TABLE>
+//				<BR CLEAR=all>
+//				<TABLE BORDER=0 WIDTH=194 CELLPADDING=1 CELLSPACING=0 BGCOLOR=#cccc99 ><TR><TD WIDTH=100%>
+//					<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR=#cccc99>
+//						<TR><TD VALIGN="middle" ALIGN="left" BGCOLOR="#eeeecc"><FONT FACE="Verdana,Arial,Helvetica" SIZE=-1><B><A HREF="/brains.html">Brains4Zombies.com <NOBR>100 Hot</NOBR> Brains</A></B></FONT></TD></TR>
+//						<TR>
+//							<TD BGCOLOR="#ffffff" VALIGN="top" WIDTH=100%>
+//								<FONT FACE="Verdana,Arial,Helvetica" SIZE=-1><B>Updated Hourly</B></FONT><FONT FACE="Verdana,Arial,Helvetica" SIZE=-1><BR CLEAR=all>
+//<OL>
+//	<LI><A HREF="/brains.html">Brains</A><BR>
+//		from Someone's Head
+//	<LI><A HREF="/brains.html?brainType=OtherBrains">Other Brains</A><BR>
+//		from Someone Else's Head
+//	<LI><A HREF="/brains.html?brainType=CelebrityBrains&celebrityID=Jesse%20Ventura">Celebrity Brains</A><BR>
+//		from Jesse "The Governor" Ventura's Head
+//</OL>
+//								</FONT>
+//								<P ALIGN=right>
+//								<A HREF="/brains.html"><IMG SRC="/images/orange-arrow.gif" WIDTH=10 HEIGHT=9 BORDER=0></A><FONT FACE="Verdana,Arial,Helvetica" SIZE=-1><A HREF="/brains.html"><B>More Hot Brains</B></A></FONT>
+//							</TD>
+//						</TR>
+//					</TABLE>
+//				</TD></TR></TABLE>
+//				<BR CLEAR=all>
+//				<TABLE BORDER=0 WIDTH=100% CELLPADDING=1 CELLSPACING=0 BGCOLOR=#cccc99 ><TR><TD WIDTH=100%>
+//					<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0 BGCOLOR=#cccc99>
+//						<TR><TD VALIGN="middle" ALIGN="left" BGCOLOR=#eeeecc><FONT FACE="Verdana,Arial,Helvetica" SIZE=-1><B><A HREF="/chat">Zombie Circles</A></B></FONT></TD></TR>
+//						<TR>
+//							<TD BGCOLOR="#ffffff" VALIGN="top" WIDTH=100%>
+//								<STRONG><FONT FACE="Verdana,Arial,Helvetica" SIZE=-1>Uniquely Bestselling Brains&#44; Other Brains&#44; and Celebrity Brains for&#46;&#46;&#46;</FONT></STRONG><BR>
+//								&nbsp;<BR>
+//								<FONT FACE="Verdana,Arial,Helvetica" SIZE=-1>&#149; <A HREF="/brains.html">Zombies</A><BR>
+//								<P ALIGN=right>
+//								<A HREF="/brains.html"><IMG SRC="/images/orange-arrow.gif" WIDTH=10 HEIGHT=9 BORDER=0></A><FONT FACE="Verdana,Arial,Helvetica" SIZE=-1 ><B><A HREF="/chat">Explore Zombie Circles</A></B></FONT>
+//								</P>
+//							</TD>
+//						</TR>
+//					</TABLE>
+//				</TD></TR></TABLE>
+//				<BR CLEAR=all>
+//			</TD></TR></TABLE>
+//			<BR>
+//			<BR>
+//			<FONT FACE="Verdana,Arial,Helvetica" SIZE=-1><B>Refer friends to Brains4Zombies.com and <A HREF="/brains.html?brainID=Your%20Friend">eat their brains</A>!</B></FONT><BR CLEAR=left>
+//			<P>
+//			<A HREF="/brains.html"><FONT FACE="Verdana,Arial,Helvetica" SIZE=-1><B>In Brains</B></FONT></A><BR>
+//			<STRONG><FONT FACE="Verdana,Arial,Helvetica" COLOR=#cc6600>Tasty Brains</FONT></STRONG><BR>
+//			<TABLE BORDER=0 ALIGN="left" CELLPADDING=0 CELLSPACING=0>
+//				<TR><TD><A HREF="/brains.html"><IMG SRC="/images/brain1.gif" WIDTH=103 HEIGHT=69 ALT="Brains..." BORDER=0 VSPACE=3 HSPACE=7 BORDER=0 ALT="Tasty Brains"></A></TD></TR>
+//				<TR><TD><CENTER><FONT FACE="Verdana,Arial,Helvetica" SIZE=-2><A HREF="/brains.html">Taste it!</A></FONT></CENTER></TD></TR>
+//			</TABLE>
+//			Some brains are just naturally better, juicier, and formerly smarter than others, and we've got them here at Brains4Zombies.com. We sell only the highest quality fresh brains, delivered straight to your door. We do the dirty deed so you can spend more time... well... doing whatever the hell it is you zombies do when you're not ripping open people's heads.  Go to <A HREF="/brains.html">Brains</A><BR CLEAR=left>
+//			<P>
+//			<A HREF="/brains.html?brainType=OtherBrains"><FONT FACE="Verdana,Arial,Helvetica" SIZE=-1><B>In Other Brains</B></FONT></A><BR>
+//			<STRONG><FONT FACE="Verdana,Arial,Helvetica" COLOR=#cc6600>Variety in your Diet</FONT></STRONG><BR>
+//			<TABLE BORDER=0 ALIGN=RIGHT CELLPADDING=0 CELLSPACING=0>
+//				<TR><TD><A HREF="/brains.html?brainType=OtherBrains"><IMG SRC="/images/brain2.gif" WIDTH=99 HEIGHT=68 ALT="Other Brains" VSPACE=3 BORDER=0 HSPACE=0></A></TD></TR>
+//				<TR><TD><CENTER><FONT FACE="Verdana,Arial,Helvetica" SIZE=-2></FONT></CENTER></TD></TR>
+//			</TABLE>
+//			When you're tired of the same old garden-variety brains, try these other brains. They're different than those brains you normally eat. Really, they are. Aw, hell, you're a zombie -- like you'd notice the difference, you undead freak.  Go to <A HREF="/brains.html?brainType=OtherBrains">Other Brains</A><BR CLEAR=left>
+//			<P>
+//			<A HREF="/brains.html?brainType=CelebrityBrains"><FONT FACE="Verdana,Arial,Helvetica" SIZE=-1><B>In Celebrity Brains</B></FONT></A><BR>
+//			<STRONG><FONT FACE="Verdana,Arial,Helvetica" COLOR=#cc6600>Eat a Celebrity</FONT></STRONG><BR>
+//			<TABLE BORDER=0 ALIGN="left" CELLPADDING=0 CELLSPACING=0>
+//				<TR><TD><A HREF="/brains.html?brainType=CelebrityBrains"><IMG SRC="/images/brain3.gif" WIDTH=94 HEIGHT=65 ALT="Celebrity Brains" BORDER=0 HSPACE=0 VSPACE=0></A></TD></TR>
+//				<TR><TD><CENTER><FONT FACE="Verdana,Arial,Helvetica" SIZE=-2></FONT></CENTER></TD></TR>
+//			</TABLE>
+//			For those of you who are undead, yet still crave a special treat, we offer these delicious Celebrity Brains:<BR>
+//			&#149; Scores of <A HREF="/brains.html?brainType=CelebrityBrains&celebrityID=Jon%20Bon%20Jovi">rock stars</A> and <A HREF="/brains.html?brainType=CelebrityBrains&celebrityID=Warren%20Beatty">movie actors</A><BR>
+//			&#149; A panorama of <A HREF="/brains.html?brainType=CelebrityBrains&celebrityID=Naomi%20Campbell">supermodels</A><BR>
+//			&#149; Feasts of <A HREF="/brains.html?brainType=CelebrityBrains&celebrityID=Jesse%20Helms">politicians</A><BR>
+//			Buy now and <A HREF="/brains.html?brainType=CelebrityBrains&celebrityID=A%20Big%20Guy">earn big brains</A>! Go to <A HREF="/brains.html?brainType=CelebrityBrains">Celebrity Brains</A><BR CLEAR=left>
+//			<P>
+//			<A HREF="/brains.html"><FONT FACE="Verdana,Arial,Helvetica" SIZE=-1><B>In Brains</B></FONT></A><BR>
+//			<STRONG><FONT FACE="Verdana,Arial,Helvetica" COLOR=#cc6600>Yet More Brains</FONT></STRONG><BR>
+//			<TABLE BORDER=0 ALIGN="right" CELLPADDING=0 CELLSPACING=0>
+//				<TR><TD><A HREF="/brains.html"><IMG SRC="/images/brain5.gif" WIDTH=98 HEIGHT=88 VSPACE=3 HSPACE=7 BORDER=0 ALT="Stupid, stupid zombies"></A></TD></TR>
+//				<TR><TD><CENTER><FONT FACE="Verdana,Arial,Helvetica" SIZE=-2><A HREF="/brains.html">Eat!</A></FONT></CENTER></TD></TR>
+//			</TABLE>
+//			If I thought you could even read, you illiterate corpse, maybe I'd bother to try to sell you some sort of designer brains. But let's face it -- it's not like you guys are terribly picky. So here's the same crap we were shilling at the top of the page, if you can remember that far back.  Go to <A HREF="/brains.html">Brains</A><BR CLEAR=left>
+//			<BR CLEAR=left>
+//			<P ALIGN=right>
+//			&nbsp;<BR>
+//		</TD>
+//	</TR>
+//</TABLE>
+//<BR CLEAR=left>
+//
+//<HR NOSHADE SIZE=1>
+//<TABLE WIDTH="100%"> 
+//	<TR>
+//		<TD WIDTH="50%" VALIGN="top" ALIGN="left"><FONT SIZE=-1><A HREF="/brains.html">Brains Only</A></FONT></TD>
+//		<TD WIDTH="50%" VALIGN="top" ALIGN="right"><FONT SIZE=-1><A HREF="#top">Top of Page</A></FONT></TD>
+//	</TR> 
+//</TABLE>
+//<P ALIGN=center>
+//<FONT FACE="Verdana,Arial,Helvetica" SIZE=-2>all contents ©1997-2000 <A HREF="http://www.goats.com/" TARGET="_top">the living dead</A>. all rights reserved for an eternity of damnation. unauthorized copying or distribution of anything on this site is prohibited.<BR>
+//This site is a parody. Please don't sue us.</FONT>
+//</P>
+//<TABLE WIDTH="100%">
+//	<TR>
+//		<TD ALIGN="center"><A HREF="http://www.stoolfairy.com/" target="_top"><IMG SRC="/images/stoolfairy_88x31.gif" WIDTH="88" HEIGHT="31" ALT="stoolfairy" BORDER="0" HSPACE="0" VSPACE="0"><FONT FACE="Verdana,Geneva,Arial,Helvetica,sans-serif" SIZE="1"><BR>stoolfairy</FONT></A></TD>
+//		<TD ALIGN="center"><a href="http://www.goats.com/" target="_top"><img src="/images/linkbutton.gif" width="88" height="31" alt="goats" border="0" hspace="0" vspace="0"><font face="Verdana,Geneva,Arial,Helvetica,sans-serif" size="1"><br>goats</font></a></td>
+//		<TD ALIGN="center"><a href="http://www.moistnap.com/" target="_top"><img src="/images/moistnap_88x31.gif" width="88" height="31" alt="moistnap" border="0" hspace="0" vspace="0"><font face="Verdana,Geneva,Arial,Helvetica,sans-serif" size="1"><br>moistnap</font></a></td>
+//	</TR>
+//</TABLE><BR>
+//<DIV ALIGN="center"><FONT FACE="Arial,Helvetica" SIZE="2">part of the <A HREF="http://www.goats.com/" TARGET="_top"><IMG SRC="/images/zombies_goats.gif" WIDTH=104 HEIGHT=35 ALT="goats" BORDER=0 HSPACE=0 VSPACE=0 ALIGN="absmiddle"></A> network</FONT></div>
+//</BODY>
+//</HTML>
