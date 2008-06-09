@@ -1,8 +1,8 @@
 class Presenters::Book < Presenters::Project
-  model_reader :description
-
+  model_reader :description, :title, :pages, :price
+  
   def description_line
-    %Q{"#{model.title}", #{model.pages} S. &mdash; #{model.price} EUR}
+    %Q{"#{title}", #{pages} S. &mdash; #{price} EUR}
   end
-
+  
 end
