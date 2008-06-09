@@ -1,8 +1,16 @@
 class Book < Product
-  attr_accessor :author, :title, :description
+  attr_accessor :author, :title, :description, :pages
   
   def initialize
     @title = title_generator
+    @pages = 190 + rand(700)
+    super
+  end
+  
+  # This is an example how absolutely NOT to do it
+  #
+  def description_line
+    %Q{"#{title}", #{pages} S. &mdash; #{price}}
   end
   
   def title_generator
