@@ -6,6 +6,10 @@ body {
 img {
   border: none; }
 
+#logo {
+  float: left;
+  margin: 0px 0px 0px 20px; }
+
 #left {
   float: left;
   display: block;
