@@ -19,8 +19,8 @@ class CartController < ApplicationController
   end
   
   def description_line_in_model
-    load_zombie_books
-    load_brains
+    load_zombie_books(5)
+    load_brains(5)
     shuffle_items
   end
   
