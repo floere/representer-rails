@@ -1,5 +1,5 @@
 class Book < Product
-  attr_accessor :author, :title, :description, :pages
+  attr_accessor :author, :title, :pages
   
   def initialize(zombie=false)
     @title = title_generator(zombie)

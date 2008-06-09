@@ -1,4 +1,4 @@
-class Presenters::Book < Presenters::Project
+class Presenters::Book < Presenters::Product
   model_reader :description, :title, :pages, :price
   
   def description_line

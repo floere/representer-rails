@@ -1,4 +1,4 @@
-class Presenters::Brain < Presenters::Project
+class Presenters::Brain < Presenters::Product
   
   # Standard presenter method.
   # Looks nice…
