@@ -39,3 +39,10 @@ img {
 
 .colored {
   background-color: #069; }
+
+.clear {
+  clear: both; }
+
+.left {
+  float: left;
+  margin: 5px; }

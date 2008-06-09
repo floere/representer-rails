@@ -3,7 +3,7 @@ class CartController < ApplicationController
   include PresenterHelper
   
   def self.example_methods
-    %w{books_each_partial description_line_in_model description_line_helper simple_presenter presenter_with_filter}
+    %w{books_each_partial description_line_in_model description_line_helper simple_presenter presenter_with_filter presenter_with_render_as}
   end
   
   def index
@@ -29,6 +29,11 @@ class CartController < ApplicationController
   def presenter_with_filter
     load_books_and_brains
   end
+  
+  def presenter_with_render_as
+    load_books_and_brains
+  end
+  
   
   def current_user
     # get the current user from the session
