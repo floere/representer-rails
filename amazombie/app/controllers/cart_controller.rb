@@ -2,6 +2,10 @@ class CartController < ApplicationController
   
   include PresenterHelper
   
+  def self.example_methods
+    %w{index books_each_partial description_line_in_model}
+  end
+  
   def index
     load_books
     load_brains
@@ -32,6 +36,13 @@ class CartController < ApplicationController
     @items ||= []
     count.times do
       @items << Book.new
+    end
+  end
+  
+  def load_zombie_books(count=10)
+    @items ||= []
+    count.times do
+      @items << Book.new(true)
     end
   end
   
