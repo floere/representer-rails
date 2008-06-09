@@ -3,7 +3,7 @@ class CartController < ApplicationController
   include PresenterHelper
   
   def self.example_methods
-    %w{books_each_partial description_line_in_model description_line_helper}
+    %w{books_each_partial description_line_in_model description_line_helper simple_presenter}
   end
   
   def index
@@ -19,22 +19,30 @@ class CartController < ApplicationController
   end
   
   def description_line_in_model
-    load_zombie_books(5)
-    load_brains(5)
-    shuffle_items
+    load_books_and_brains
   end
   
   def description_line_helper
-    load_zombie_books(5)
-    load_brains(5)
-    shuffle_items
+    load_books_and_brains
   end
+  
+  def simple_presenter
+    load_books_and_brains
+  end
+  
   
   def current_user
     # get the current user from the session
   end
   
   private
+  
+  def load_books_and_brains
+    load_books(5)
+    load_zombie_books(5)
+    load_brains(5)
+    shuffle_items
+  end
   
   def shuffle_items
     @items = @items.sort_by{rand}
