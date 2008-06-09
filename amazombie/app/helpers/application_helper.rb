@@ -3,7 +3,8 @@ module ApplicationHelper
   
   def cart_controller_method_links
     mets = CartController.example_methods
-    mets.map{|met| link_to met, :controller => 'cart', :action => met}.join( tag('br') )
+    links = mets.map{ |met| content_tag( 'li', link_to(met, :controller => 'cart', :action => met) ) }
+    content_tag 'ul', links
   end
   
 end
