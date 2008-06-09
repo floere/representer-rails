@@ -1,5 +1,33 @@
 body {
-  margin: 0px; }
+  margin: 0px;
+  font-family: Verdana;
+  font-size: 13px; }
+
+#left {
+  float: left;
+  display: block;
+  width: 171px;
+  height: 500px;
+  padding: 20px 0px 0px 0px; }
+
+#hello {
+  margin: 0px 0px 20px 0px; }
+  #hello b {
+    color: #cc6600; }
+  #hello .note {
+    font-size: 80%; }
+
+#content {
+  float: left;
+  display: block;
+  width: 50%;
+  height: 1000px;
+  padding: 20px 0px 0px 0px;
+  margin: 0px 20px; }
+
+#right {
+  float: right;
+  padding: 20px 0px 0px 0px; }
 
 .center {
   text-align: center; }

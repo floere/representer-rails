@@ -10,36 +10,31 @@
       = image_tag 'sections_welcome.gif'
     %div{ :class => 'center colored' }
       = image_tag 'guides.gif'
-    = yield
-
-//<BODY BGCOLOR="#ffffff" LINK="#003399" ALINK="#ff9933" VLINK="#996633" TEXT="#000000">
-//<A NAME="top"><!--Top of Page--></a>
-//<TABLE BORDER=0 WIDTH=100% CELLSPACING=0 CELLPADDING=0>
-//	<TR ALIGN="center" BGCOLOR="#ffffff">
-//		<TD><IMG SRC="/images/sections_home.gif" WIDTH=590 HEIGHT=59 ALT="" BORDER=0 HSPACE=0 VSPACE=0 USEMAP="#sections"></TD>
-//<MAP NAME="sections">
-//	<AREA SHAPE="rect" COORDS="546,0,590,28" HREF="/brains.html?brainID=A%20Help%20Desk%20Employee" TARGET="_top" TITLE="Help" ALT="Help" >
-//	<AREA SHAPE="rect" COORDS="407,0,541,28" HREF="/brains.html?brainID=Your%20Accountant" TARGET="_top" TITLE="Your Account" ALT="Your Account" >
-//	<AREA SHAPE="rect" COORDS="462,32,590,59" HREF="/chat" TARGET="_top" TITLE="Zombie Chat" ALT="Zombie Chat" >
-//	<AREA SHAPE="rect" COORDS="297,32,461,59" HREF="/brains.html?brainType=CelebrityBrains" >
-//	<AREA SHAPE="rect" COORDS="162,32,297,59" HREF="/brains.html?brainType=OtherBrains" TARGET="_top" TITLE="Other Brains" ALT="Other Brains" >
-//	<AREA SHAPE="rect" COORDS="92,33,162,59" HREF="brains.html" TARGET="_top" TITLE="Brains" ALT="Brains" >
-//	<AREA SHAPE="rect" COORDS="0,34,92,59" HREF="/" TARGET="_top" TITLE="Welcome" ALT="Welcome" >
-//</MAP>
-//	</TR>
-//	
-//	<TR BGCOLOR="#006699">
-//		<TD ALIGN="center"><IMG SRC="/images/guides.gif" WIDTH=590 HEIGHT=28 ALT="" BORDER=0 HSPACE=0 VSPACE=0 USEMAP="#guides"></TD>
-//<MAP NAME="guides">
-//	<AREA SHAPE="rect" COORDS="466,0,588,26" HREF="/chat" TARGET="_top" TITLE="Zombie Chat" ALT="Zombie Chat" >
-//	<AREA SHAPE="rect" COORDS="362,0,462,26" HREF="/brains.html?brainID=A%20Tour%20Guide" TARGET="_top" TITLE="Site Guide" ALT="Site Guide" >
-//	<AREA SHAPE="rect" COORDS="220,0,360,26" HREF="/brains.html?brainID=A%20Guarantor" TARGET="_top" TITLE="Our Guarantee" ALT="Our Guarantee" >
-//	<AREA SHAPE="rect" COORDS="100,0,218,26" HREF="/brains.html?brainID=Gift" TARGET="_top" TITLE="Gift Services" ALT="Gift Services" >
-//	<AREA SHAPE="rect" COORDS="0,0,98,26" HREF="/brains.html?brainID=An%20Order%20Taker" TARGET="_top" TITLE="How To Order" ALT="How To Order" >
-//</MAP>
-//	</TR>
-//
-//</TABLE>
+    #left
+      = image_tag 'left.png'
+    #content
+      #welcome
+        #hello
+          %b Hello, Undead Zombie.
+          .note
+            (if you're not an undead zombie,
+            = link_to 'click here'
+            \.)
+          We have
+          = link_to 'Books'
+          and
+          = link_to 'Brains'
+          for you in
+          = link_to 'Celebrity Brains'
+          ,
+          = link_to 'John Doe Brains'
+          and
+          = link_to 'Literature'
+          \.
+      = yield
+    #right
+      = image_tag 'right.png'
+    
 //<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
 //	<TR>
 //		<TD WIDTH="171" VALIGN="top">
