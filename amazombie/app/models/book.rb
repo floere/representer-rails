@@ -4,13 +4,13 @@ class Book < Product
   def initialize(zombie=false)
     @title = title_generator(zombie)
     @pages = 190 + rand(700)
-    super()
+    @price = 19 + rand(20)
   end
   
   # This is an example how absolutely NOT to do it
   #
   def description_line
-    %Q{"#{title}", #{pages} S. &mdash; #{price}}
+    %Q{"#{title}", #{pages} S. &mdash; #{price} EUR}
   end
   
   def title_generator(zombie)
