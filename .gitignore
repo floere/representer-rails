@@ -1,1 +1,3 @@
-amazombie/log/*
+amazombie/log/*.log
+amazombie/tmp/**/*
+.DS_Store
