@@ -7,11 +7,7 @@ class CartController < ApplicationController
   end
   
   def index
-    load_books
-    load_brains
-    shuffle_items
-    
-    @controller_presenter = presenter_for Book.new
+    redirect_to :action => 'books_each_partial'
   end
   
   def books_each_partial
