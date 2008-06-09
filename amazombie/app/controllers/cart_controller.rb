@@ -2,6 +2,10 @@ class CartController < ApplicationController
   
   include PresenterHelper
   
+  def self.example_methods
+    %w{index books_each_partial description_line_in_model}
+  end
+  
   def index
     load_books
     load_brains
