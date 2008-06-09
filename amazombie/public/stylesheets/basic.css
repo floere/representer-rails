@@ -46,3 +46,15 @@ img {
 .left {
   float: left;
   margin: 5px; }
+
+.navi {
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid grey; }
+
+.navi ul {
+  display: none; }
+
+.navi:hover ul {
+  display: block; }
