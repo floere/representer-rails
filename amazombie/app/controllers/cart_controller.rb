@@ -3,7 +3,7 @@ class CartController < ApplicationController
   include PresenterHelper
   
   def self.example_methods
-    %w{books_each_partial description_line_in_model}
+    %w{books_each_partial description_line_in_model description_line_helper}
   end
   
   def index
@@ -19,6 +19,12 @@ class CartController < ApplicationController
   end
   
   def description_line_in_model
+    load_zombie_books(5)
+    load_brains(5)
+    shuffle_items
+  end
+  
+  def description_line_helper
     load_zombie_books(5)
     load_brains(5)
     shuffle_items
