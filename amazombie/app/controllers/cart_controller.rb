@@ -3,11 +3,12 @@ class CartController < ApplicationController
   include PresenterHelper
   
   def self.example_methods
-    %w{books_each_partial description_line_in_model description_line_helper simple_presenter presenter_with_filter presenter_with_render_as collection_presenter}
+    # books_each_partial description_line_in_model description_line_helper
+    %w{simple_presenter presenter_with_filter presenter_with_render_as collection_presenter collection_presenter.text}
   end
   
   def index
-    redirect_to :action => 'books_each_partial'
+    redirect_to :action => 'simple_presenter'
   end
   
   def books_each_partial
