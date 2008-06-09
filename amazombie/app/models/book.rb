@@ -27,10 +27,10 @@ class Book < Product
       'Enterprise Integration with %ss',
       '%s by Example: %ss and %ss',
       'The %s Bible',
-      'Gardening with %s (aka The Pickaxe)'
+      '%s internals (aka The Pitchfork)'
     ]
-    words = %w{Ruby Python Smalltalk Java Javascript Rails}
-    words = %w{Brain Chainsaw Skull Zombie Eyesoup Living\ Dead Voodoo} if zombie
+    words = %w{Ruby Python Smalltalk Java Javascript Fortran Visual\ Basic C#}
+    words = %w{Brain Chainsaw Skull Zombie Eyesoup Brainsalat Living\ Dead Voodoo} if zombie
     phrases[rand(phrases.size)] % words.sort_by(&:rand)
   end
   
