@@ -23,7 +23,7 @@ module PresenterHelper
   # Create a new presenter instance for the given model instance
   # with the given arguments.
   #
-  # Note: Presenters are usually from class Presenters::<ModelClassName>.
+  # Note: Presenters are usually of class Presenters::<ModelClassName>.
   # (As returned by default_presenter_class_for)
   # Override specific_mapping if you'd like to install your own.
   # OR: Override default_presenter_class_for(model) if
