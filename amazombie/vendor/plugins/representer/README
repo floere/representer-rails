@@ -64,7 +64,7 @@ controller_method :current_member, :logger
 
 # * Big Example:
 class Presenters::Project < Presenters::Base
-  # All of the rails' standard helpers.
+  # All of Rails' standard helpers.
   #
   helper ActionView::Helpers::ActiveRecordHelper
   helper ActionView::Helpers::TagHelper
