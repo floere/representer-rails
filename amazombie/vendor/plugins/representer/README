@@ -1,10 +1,11 @@
 # (Re)Presenters for Rails
 # Ask florian.hanke@gmail.com if you have questions, thanks! :)
 # 
-# NOTE:
+# IMPORTANT NOTE:
 # As of yet it is needed to copy the representer/views/presenters/collection
 # directory to the corresponding location in app/views/presenters/collection.
 # This is only needed if you wish to use the collection presenter.
+# Note: Rewrite the collection templates as needed, they are rather basic.
 #
 # * Getting a presenter in a view or a controller.
 #
@@ -23,7 +24,7 @@ collection_presenter_instance.collection
 # Rendering a table.
 collection_presenter_instance.table
 # Rendering a pagination.
-# Note: Only if the passed parameter for collection_presenter_for is a PaginationEnumeration.
+# Note: Only works if the passed parameter for collection_presenter_for is a PaginationEnumeration.
 collection_presenter_instance.pagination
 
 # * Writing filtered delegate methods on the presenter.
@@ -63,6 +64,7 @@ helper ApplicationHelper
 controller_method :current_member, :logger
 
 # * Big Example:
+#
 class Presenters::Project < Presenters::Base
   # All of Rails' standard helpers.
   #
