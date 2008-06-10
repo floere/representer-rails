@@ -4,5 +4,4 @@ Collection:
     - presenter = presenter_for(item, self)
     %li
       = presenter.render_as(template_name)
-      - unless item == collection.entries.last
-        = separator
+    = separator unless item == collection.entries.last

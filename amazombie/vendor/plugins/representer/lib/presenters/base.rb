@@ -61,7 +61,6 @@ module Presenters
       def controller_method(*methods)
         methods.each do |method|
           delegate method, :to => :controller
-          private method
         end
       end
     
@@ -79,6 +78,8 @@ module Presenters
     end # class << self
     
     # Create a presenter. To create a presenter, you need to have a model (to present) and a context.
+    # The context is usually a view or a controller.
+    # Note: But doesn't need to be one :)
     # 
     def initialize(model, context)
       @model = model
@@ -116,38 +117,15 @@ module Presenters
       # Set the format to render in, e.g. :text, :html
       view.template_format = format if format
     
-      # Finally, render
+      # Finally, render and pass the presenter as a local variable.
       view.render :partial => template_path(view_name), :locals => { :presenter => self }
     end
-  
-    # Returns the instance variables for the view.
-    #
-    # @presenter  : the presenter
-    # @model      : the model of the presenter
-    # @controller : the controller of the presenter
-    #
-    def instance_variables_for_view
-      { :presenter => self, :model => @model, :controller => @controller }
-    end
-    
-    # Returns a view class to instantiate the view with.
-    #
-    # Gets the view class from the controller and also
-    # includes all helpers from/for this presenter.
-    #
-    # def view_class
-    #   view_class = controller.class.template_class
-    #   TODO REPLACE THIS
-    #   view_class.send(:include, master_helper_module)
-    #   view_class
-    # end
     
     # Creates a view instance from the given view class.
     #
     def view_instance
       view = ActionView::Base.new(controller.class.view_paths, {}, controller)
       view.extend master_helper_module
-      view
     end
   
     # Returns the root of this presenters views with the template name appended.

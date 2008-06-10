@@ -93,6 +93,9 @@ module PresenterHelper
 
     # Renders a collection.
     #
+    # Note: The only difference between a list and a collection is the enclosing
+    # list type. While list uses ol, the collection uses ul.
+    #
     # Options:
     #   collection => collection to iterate over
     #   context => context to render in
@@ -116,6 +119,8 @@ module PresenterHelper
     end
 
     # Renders a table.
+    #
+    # Note: Each item represents a table row.
     #
     # Options:
     #   collection => collection to iterate over

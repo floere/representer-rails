@@ -86,16 +86,8 @@ describe Presenters::Base do
   
   describe ".controller_method" do
     it "should set up delegate calls to the controller" do
-      flexmock(Presenters::Base).should_receive(:private)
       flexmock(Presenters::Base).should_receive(:delegate).once.with(:method1, :to => :controller)
       flexmock(Presenters::Base).should_receive(:delegate).once.with(:method2, :to => :controller)
-      
-      Presenters::Base.controller_method :method1, :method2
-    end
-    it "should make the delegate methods private" do
-      flexmock(Presenters::Base).should_receive(:delegate)
-      flexmock(Presenters::Base).should_receive(:private).once.with(:method1)
-      flexmock(Presenters::Base).should_receive(:private).once.with(:method2)
       
       Presenters::Base.controller_method :method1, :method2
     end
@@ -149,12 +141,9 @@ describe Presenters::Base do
       @presenter = Presenters::Base.new(model_mock, context_mock)
       
       @view_name = flexmock(:view_name)
-      view_class_mock = flexmock(:view_class)
       @view_instance_mock = flexmock(:view_instance)
       
-      flexmock(@presenter).should_receive(:view_instance_from).once.with(view_class_mock).and_return @view_instance_mock
-      
-      flexmock(@presenter).should_receive(:view_class).once.and_return(view_class_mock)
+      flexmock(@presenter).should_receive(:view_instance).once.and_return @view_instance_mock
       
       path_mock = flexmock(:path)
       flexmock(@presenter).should_receive(:template_path).once.with(@view_name).and_return path_mock
@@ -196,50 +185,26 @@ describe Presenters::Base do
         end
       end
     end
-    describe "#instance_variables_for_view" do
-      it "should hand the right variables to the view" do
-        presenter.instance_variables_for_view.should == {
-          :model => model_mock,
-          :controller => context_mock,
-          :presenter => presenter
-        }
-      end
-    end
     
-    describe "#view_instance_from" do
-      it "should call new on the given view class" do
-        view_class_mock = flexmock(:view_class)
-        controller_mock = flexmock(:controller)
+    describe "#view_instance" do
+      it "should create a new view instance from ActionView::Base" do
         view_paths_mock = flexmock(:view_paths)
-        controller_mock.should_receive(:view_paths).once.and_return(view_paths_mock)
-        instance_variables_mock = flexmock(:instance_variables_mock)
+        @context_mock.should_receive('class.view_paths').once.and_return(view_paths_mock)
         
-        flexmock(presenter).should_receive(:controller).twice.and_return(controller_mock)
-        flexmock(presenter).should_receive(:instance_variables_for_view).once.and_return(instance_variables_mock)
-        
-        view_class_mock.should_receive(:new).with(view_paths_mock, instance_variables_mock, controller_mock)
-        
-        presenter.view_instance_from(view_class_mock)
+        flexmock(ActionView::Base).should_receive(:new).once.with(view_paths_mock, {}, @context_mock)
+        @presenter.view_instance
       end
-    end
-    
-    describe "#view_class" do
-      before(:each) do
-        @view_class_mock = flexmock(:view_class)
-        @context_mock.should_receive('class.template_class').and_return @view_class_mock
-      end
-      it "should include the master helper module in the view class" do
+      it "should extend the view instance with the master helper module" do
         master_helper_module_mock = flexmock(:master_helper_module)
-        flexmock(presenter).should_receive(:master_helper_module).and_return master_helper_module_mock
-        @view_class_mock.should_receive(:include).with(master_helper_module_mock)
-
-        presenter.view_class
-      end
-      it "should return the view class" do
-        flexmock(presenter).should_receive(:master_helper_module)
-        @view_class_mock.should_receive(:include)
+        flexmock(@presenter).should_receive(:master_helper_module).and_return(master_helper_module_mock)
         
-        presenter.view_class == @view_class_mock
+        view_instance_mock = flexmock(:view_instance)
+        view_instance_mock.should_receive(:extend).with(master_helper_module_mock)
+        
+        @context_mock.should_receive('class.view_paths').once
+        flexmock(ActionView::Base).should_receive(:new).once.and_return view_instance_mock
+        
+        @presenter.view_instance
       end
     end
   end
